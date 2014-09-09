@@ -1,0 +1,23 @@
+\begin{thebibliography}{1}
+
+\bibitem{uima:Online}
+Overview and setup, uima.apache.org, 2006.
+
+\bibitem{TUD-CS-2014-0864}
+Richard~Eckart de~Castilho and Iryna Gurevych.
+\newblock A broad-coverage collection of portable nlp components for building
+  shareable analysis pipelines.
+\newblock In {\em Proceedings of the Workshop on Open Infrastructures and
+  Analysis Frameworks for HLT (OIAF4HLT) at COLING 2014}, pages 1--11, August
+  2014.
+
+\bibitem{GurevychEtal2007dkpro0}
+Iryna Gurevych, Max M{\"u}hlh{\"a}user, Christof M{\"u}ller, J{\"u}rgen
+  Steimle, Markus Weimer, and Torsten Zesch.
+\newblock Darmstadt knowledge processing repository based on uima.
+\newblock In {\em Proceedings of the First Workshop on Unstructured Information
+  Management Architecture at Biannual Conference of the Society for
+  Computational Linguistics and Language Technology}, T{\"u}bingen, Germany,
+  April 2007.
+
+\end{thebibliography}

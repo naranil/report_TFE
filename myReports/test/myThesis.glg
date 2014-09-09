@@ -1,0 +1,13 @@
+;; This logfile was generated automatically by `xindy'
+;; at 09.09.2014  17:49:46
+;; Indexstyle: "/tmp/rQqjUxiXEa", Rawindex: "/tmp/WxlOW7va8y", Output: "myThesis.gls"
+
+
+Building indexentry-tree:
+Hierdepth of index is :TREE
+
+sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
+
+Forming letter-groups:
+sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
+Letter-group: "»€Ú¤—»€Ú¨†Ð" -> "M"

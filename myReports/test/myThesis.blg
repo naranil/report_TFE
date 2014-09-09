@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: myThesis.aux
+The style file: plain.bst
+Database file #1: bib/Bibliography.bib
+Warning--entry type for "uima:Online" isn't style-file defined
+--line 33 of file bib/Bibliography.bib
+Warning--to sort, need author or key in uima:Online
+You've used 3 entries,
+            2118 wiz_defined-function locations,
+            515 strings with 4782 characters,
+and the built_in function-call counts, 961 in all, are:
+= -- 85
+> -- 47
+< -- 1
++ -- 20
+- -- 16
+* -- 64
+:= -- 151
+add.period$ -- 7
+call.type$ -- 3
+change.case$ -- 17
+chr.to.int$ -- 0
+cite$ -- 4
+duplicate$ -- 40
+empty$ -- 86
+format.name$ -- 16
+if$ -- 207
+int.to.chr$ -- 0
+int.to.str$ -- 3
+missing$ -- 2
+newline$ -- 16
+num.names$ -- 4
+pop$ -- 30
+preamble$ -- 1
+purify$ -- 14
+quote$ -- 0
+skip$ -- 28
+stack$ -- 0
+substring$ -- 35
+swap$ -- 9
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 12
+warning$ -- 1
+while$ -- 7
+width$ -- 4
+write$ -- 30
+(There were 2 warnings)

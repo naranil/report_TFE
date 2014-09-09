@@ -1,3 +1,13 @@
-\contentsline {chapter}{\numberline {1}Introduction}{3}
-\contentsline {section}{\numberline {1.1}Motivation}{3}
-\contentsline {section}{\numberline {1.2}Organization}{3}
+\contentsline {chapter}{\numberline {1}Introduction}{1}
+\contentsline {section}{\numberline {1.1}Motivation}{1}
+\contentsline {section}{\numberline {1.2}Organization}{1}
+\contentsline {chapter}{\numberline {2}Background}{2}
+\contentsline {section}{\numberline {2.1}Argumentation}{2}
+\contentsline {subsection}{\numberline {2.1.1}General Definitions}{2}
+\contentsline {subsection}{\numberline {2.1.2}Persuasion}{2}
+\contentsline {subsection}{\numberline {2.1.3}Persuasion 2.0}{2}
+\contentsline {section}{\numberline {2.2}NLP and the DKPro Framework}{2}
+\contentsline {subsection}{\numberline {2.2.1}Natural Language Processing}{2}
+\contentsline {subsection}{\numberline {2.2.2}UIMA}{2}
+\contentsline {subsection}{\numberline {2.2.3}DKPro Core}{3}
+\contentsline {chapter}{\numberline {A}DKPro Core Overview}{5}
