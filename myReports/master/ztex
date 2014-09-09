@@ -1,0 +1,13 @@
+#!/bin/sh
+clear
+
+echo "-- Nettoyage des anciennes compilations"
+\rm *.dvi *.aux *.toc *.log *.lot *.lof *.bbl *.blg
+
+echo "-- Compilation"
+latex $1
+bibtex $1
+latex $1
+latex $1
+echo "-- Affichage du DVI"
+oxdvi -s 7  -geometry 810x1000 -bg white $1 &

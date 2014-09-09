@@ -1,0 +1,36 @@
+Plan pour le rapport ECL:
+
+Front Page: Titre (2 langues ?), logo of TUD and ECL, names of professors, ect...?
+
+Abstract: prendre example sur le papier de Ivan, et faire un abstract en Anglais puis Francais.
+
+Acknowledgement.
+
+Content (how many parts ?)
+List of Figures ?
+
+Introduction: my internship, collaboration with Lyon 1 Uni, Darmstadt+DIPF, team. Then introduction to deep learning and argumentation mining, the classification task and the framework used (DKPro TC).
+
+Background:
+
+- Data used: the corpus of 990 art-comment/forum texts of 6 different topics (and its meta-data: topic, type, creation date). 
+- Gold data: human classification task, describe (more or less briefly) the annotation guideline and also the theory about stances and all... Scores and why we can initiate a machine classification. -> Citation ?
+- Technology used: Describe DKPro, Java implementation of UIMA and give details about TC (Weka, ect...). How we're using this framework and stress the fact that we enriched it (example sentiment analysis) -> papers about DKPro
+- Weka's library and the classifier we use (SVM: description) -> Citation
+- How we evaluate our classification: metrics (TP, FP, ect...), Accuracy, F-mes for all different cases (Full CV, In Domain CV, Cross Domain, Full Cross Domain). How the F-measures are implemented -> cite some articles, ask Ivan
+
+Our work:
+- Feature engineering: all the features implemented (citations when it's not how feature). Formula, software engineering, ect...
+- Results for different features
+- Bootstrapping
+- Error analysis (problematic instances humans VS instances)
+- Feature selection
+
+Conclusion and further work
+
+Appendices
+
+
+
+
+

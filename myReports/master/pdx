@@ -1,0 +1,15 @@
+#!/bin/sh
+clear
+
+echo "-- Nettoyage des anciennes compilations"
+\rm *.dvi *.aux *.toc *.log *.lot *.lof *.bbl *.blg
+
+echo "-- Compilation"
+pdflatex $1
+pdflatex $1
+bibtex $1
+bibtex $1
+pdflatex $1
+pdflatex $1
+echo "-- Affichage du DVI"
+xpdf -z 100 $1.pdf &

@@ -1,0 +1,177 @@
+\documentclass[11pt]{book}
+
+\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+
+\usepackage{vmargin}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage[francais]{babel}
+\usepackage{color}
+\usepackage{natbib}
+\usepackage{array}
+\usepackage[T1]{fontenc}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{floatflt}
+\usepackage{url}
+\usepackage{footbib}
+\usepackage[xindy]{glossaries}
+\usepackage{fancyhdr}
+
+%\usepackage{times}
+
+%\usepackage{draftcopy} 
+%\draftcopyName{Version provisoire - \today}{140}
+%\draftcopySetScale{50}
+%
+\newcommand{\missref}{\textcolor{green}{(reference)}}
+\newcommand{\omax}{$\mathrm{[O}_{3}\mathrm{]_{15}}$~}
+\newcommand{\xmax}{$\mathrm{[O}_{x}\mathrm{]_{15}}$~}
+\newcommand{\nmax}{$\mathrm{[NO}_{x}\mathrm{]_{09}}$~}
+\newcommand{\ctm}{chemistry-transport model}
+\newcommand{\oz}{$\mathrm{O}_{3}$~}
+\newcommand{\ox}{$\mathrm{O}_{x}$~}
+\newcommand{\nox}{$\mathrm{NO}_{x}$~}
+\newcommand{\ar}{$\rightarrow$~}
+\newcommand{\notwo}{$\mathrm{NO}_{2}$~}
+
+\setmarginsrb{20mm}{20mm}{25mm}{25mm}{20pt}{15mm}{20mm}{10mm}
+%
+\newenvironment{l1}{\begin{list}{$\bullet$}{\setlength{\itemsep}
+{0ex} \setlength{\parsep}{0ex} \leftmargin 1em}}{ \end{list}}
+
+\newenvironment{l2}{\begin{list}{$\square$}{\setlength{\itemsep}
+{0ex} \setlength{\parsep}{0ex} \setlength{\listparindent}{3em} \leftmargin 2em}}{ \end{list}}
+
+\newenvironment{l3}{\begin{list}{$\rhd$}{\setlength{\itemsep}
+{0ex} \setlength{\parsep}{0ex} \leftmargin 2em}}{ \end{list}}
+%
+\newenvironment{lc}{\begin{list}{$\square$}{\setlength{\itemsep}
+{0ex} \setlength{\parsep}{0ex} \leftmargin 2em}}{ \end{list}}
+%------------------------------------------------------------------------ 
+% Code for creating empty pages
+% No headers on empty pages before new chapter
+\makeatletter
+\def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
+    \hbox{}
+    \thispagestyle{plain}
+    \newpage
+    \if@twocolumn\hbox{}\newpage\fi\fi\fi}
+\makeatother \clearpage{\pagestyle{plain}\cleardoublepage}
+
+\makeatletter
+\def\thickhrulefill{\leavevmode \leaders \hrule height 1ex \hfill \kern \z@}
+\def\@makechapterhead#1{%
+  \vspace*{5\p@}%
+  {\parindent \z@ 
+        \raggedleft
+        \reset@font\Huge\bfseries
+        \begin{tabular}{c|p{12cm}}
+          {\thechapter{}\  }
+          &
+          \Large \textcolor{blue}{#1}
+        \end{tabular}
+        \par\nobreak
+    \vskip 40\p@
+  }}
+\def\@makeschapterhead#1{%
+  \vspace*{5\p@}%
+  {\parindent \z@ 
+        \raggedleft
+        \reset@font\huge\bfseries
+        \begin{tabular}{cp{12cm}}
+          {\hphantom{\thechapter{}}\  }
+          &
+          \Large #1
+        \end{tabular}
+        \par\nobreak
+    \vskip 40\p@
+  }}
+
+% Define pagestyle
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\chaptermark}[1]{\markboth{ \emph{#1}}{}}
+\fancyhead[LO]{}
+\fancyhead[RE]{\leftmark}
+\fancyfoot[LE,RO]{\thepage}
+
+%\setlength{\parindent}{0pt}
+%\setlength{\parskip}{0.3\baselineskip}
+
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+%---------------------------------------------------------------------------
+\begin{document}
+
+\definecolor{lblue}{rgb}{0.8,0.85,1}
+\definecolor{gray}{gray}{0.85}
+\definecolor{jaun}{rgb}{1,1,0.}
+\definecolor{lvert}{rgb}{0.,0.6,0.}
+\definecolor{vert}{rgb}{0.,0.5,0.}
+\definecolor{orange}{rgb}{1,0.8,0}
+\newcommand{\fig}[1]{\textcolor{blue}{Figure~\ref{figure:#1}}}
+\newcommand{\tab}[1]{\textcolor{blue}{Tableau~\ref{table:#1}}}
+\newcommand{\equa}[1]{\textcolor{blue}{\'equation~\ref{eq:#1}}}
+\newcommand{\refb}[1]{\textcolor{blue}{[\cite{#1}]}}
+\newcommand{\ver}[1]{\textcolor{lvert}{\bf #1}}
+\newcommand{\rouge}[1]{\textcolor{red}{#1}}
+\newcommand{\bleu}[1]{\textcolor{blue}{#1}}
+\newcommand{\lmcb}[1]{\colorbox{lblue}{\begin{tabular}{l}{#1}\end{tabular}}}
+\newcommand{\lmcj}[1]{\colorbox{jaun}{\begin{tabular}{l}{#1}\end{tabular}}}
+\newcommand{\lmcg}[1]{\colorbox{gray}{\noindent \begin{tabular}{p{0.9\linewidth}}{#1}\end{tabular}}}
+%##############################################################################
+
+\newacronym{DKPro}{DKPro}{\textit{Darmstadt Knowledge Processing Software Repository}}
+\newacronym{TC}{TC}{Text Classification}
+\newglossaryentry{framework} {
+  name=framework,
+  description={terme informatique}
+}
+
+%##############################################################################
+
+\sloppy
+\input{rapport-couv}
+
+\mainmatter
+\input{pipoIntro/preambule}
+\input{pipoIntro/resume}
+\input{pipoIntro/remerciement}
+
+\tableofcontents
+
+% Adjustments headers
+\fancyhead[LO]{\leftmark}
+\fancyhead[RE]{\emph{Chapitre \thechapter}}
+
+\input{parts/part1}
+\input{parts/part2}
+\input{parts/part3}
+\input{parts/part4}
+
+\input{pipoIntro/conclusion}
+
+%\input{rapport-intro}
+
+
+\makeglossaries
+\printglossaries
+
+
+%===========================================================
+\appendix
+\input{annexes/ProjectManagement/annexeProjectManagement}
+\input{annexes/informatique/annexeInfoGeneral}
+%===========================================================
+%\bibliographystyle{agu04}
+\bibliographystyle{unsrt}
+\footnotesize
+\bibliography{biblio}
+\normalsize
+
+\end{document}

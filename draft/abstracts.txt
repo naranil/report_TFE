@@ -1,0 +1,2 @@
+English:
+The goal of this work is the identification of persuasive and argumentative arguments in user-generated content, namely discussion forums and article comments. This project is part 
