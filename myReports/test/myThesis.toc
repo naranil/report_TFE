@@ -10,4 +10,5 @@
 \contentsline {subsection}{\numberline {2.2.1}Natural Language Processing}{2}
 \contentsline {subsection}{\numberline {2.2.2}UIMA}{2}
 \contentsline {subsection}{\numberline {2.2.3}DKPro Core}{3}
-\contentsline {chapter}{\numberline {A}DKPro Core Overview}{5}
+\contentsline {subsection}{\numberline {2.2.4}DKPro Text Classification}{4}
+\contentsline {chapter}{\numberline {A}DKPro Core Overview}{6}
