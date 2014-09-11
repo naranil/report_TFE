@@ -1,0 +1,63 @@
+\chapter{The Research Work} 
+In this part, we'll see how the theoretical knowledge in Argumentation Theory and NLP presented were applied to a concrete case study. We'll first see the types of textual data we have, how they were annotated for the supervised learning task and then how features were engineered to perform an automatic classification.
+\section{Text Corpus}
+The data set used for this study was originally composed of 990 text files. They contain forum posts or articles about 6 different domains related to education, that provoke debate in the American society:
+\begin{itemize}
+  \item \textbf{homeschooling}: It's the education of children outside the formal settings of public or private schools and is usually undertaken directly by parents or tutors. 
+  \item \textbf{redshirting}: The practice of postponing entrance into kindergarten of age-eligible children in order to allow extra time for socioemotional, intellectual, or physical growth. 
+  \item \textbf{prayer in schools}: Debate about whether or not a public school should allow and allocate time and buildings for religious practices.
+  \item \textbf{public vs private schools}: Which kind of school offers the best education.
+  \item \textbf{mainstreaming}: In the context of education, it's the practice of educating students with special needs in regular classes during specific time periods based on their skills.
+  \item \textbf{single sex education}: The practice of conducting education where male and female students attend separate classes or in separate buildings or schools.  
+\end{itemize} 
+
+The meta-information for each text (id, type of post, domain) is given my the name of the file in itself such as follow:
+
+\centerline{\texttt{174\_P2\_artcomment\_homeschooling.txt}}
+
+$\frac{ \textrm{Text}}{1} \frac{\textrm{Text}}{2} \frac{\textrm{Text}}{3}$
+??FIND A WAY TO DO IT THIS WAY 
+
+Later in the internship, I started to use \textit{XMI} files\footnote{The XML Metadata Interchange (XMI) is an Object Management Group (OMG) standard for exchanging metadata information via Extensible Markup Language (XML).} that contain more information about the post or comment in itself such as the author, the date, ect... ??Annexe with how xmi looks like ?
+
+\subsection{Manual Annotation}
+As mentioned before, the classification we want to perform is a supervised learning problem since it wants to imitate the human decision on judging if a post is persuasive or not. An annotation guideline was written by Ivan Habernal \cite{ivanguideline} in order for the annotators to understand the task. In this section, we'll discuss about the general ideas of this guideline.
+\subsubsection{Categories in Persuasion}
+\textbf{The task}: Distinguish, whether the comment is persuasive regarding the discussed topic. The key question to answer is: \textit{Does the author intend to convince us clearly about his/her attitude or opinion towards the topic?} If the answer is yes, we classify the comment as persuasive. There are two main categories in this task, namely \texttt{P1:Persuasive} and \texttt{P2:Non-persuasive}. The second category is further divided into more categories, that basically cover the various phenomena that may be encountered in the data.
+
+However, It is not necessary to categorize the data exactly into one of the categories under \texttt{P2:Non-persuasive}. For example, a particular text may be both off-topic and out-of-context; in that case, choose either of these categories.
+\\
+Remember: we are mainly interested in finding the \texttt{P1:Persuasive} documents that represent on-topic texts with intentions to persuade and convince the readers.
+\\
+\vspace{0.15cm}
+\\
+\texttt{Quick overview of possible distinct categories:}
+\\
+\texttt{P1: Persuasive}
+\\
+\texttt{P2: Non-persuasive}
+
+\texttt{P2.1: Out-of-context or reaction to other comment}
+
+\texttt{P2.3: Off-topic}
+
+\texttt{P2.4: Personal worries}
+
+\texttt{P2.5: Story-sharing without intentions to persuade}
+
+\texttt{P2.7: Impossible to decide about persuasiveness without deep background knowledge}
+\\
+\vspace{0.15cm}
+While the annotation phase, the annotators were charged of determining if a text was in the P1 class and if not they had to specify to which of the seven P2 subclasses it belongs to.
+
+\subsubsection{Examples}
+\textbf{Clearly belongs to P1}
+\\
+\\
+\fbox{\begin{minipage}{1\textwidth}
+\textbf{\#2013 (forumpost, single-sex-education)} School should be co-ed. Some children are
+awkward with others of their own gender. For example, certain girls who are tom-boys might not be comfortable in a room full of girls. The mixed genders are preparing kids for the real world, where things are not segregated.
+\end{minipage}}
+\\
+
+In \texttt{\#2013}, the author states that schools should not be single-sex, also provides reasons why he/she thinks so.

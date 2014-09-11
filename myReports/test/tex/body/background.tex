@@ -27,7 +27,7 @@ GIVE EXAMPLES OF AE HERE AND DKPRO PROC PIPILINE AND CAS ?
 
 Thus, the DKPRo software use UIMA's AE in order to collect structured information about textual data. 
 \subsection{DKPro Core}
-Many NLP tools are already freely available in the NLP research community. DKPro Core \cite{TUD-CS-2014-0864} provides UIMA components wrapping these tools (and some original tools) so they can be used interchangeably in UIMA processing pipelines. The provided components wrap a constantly growing set of stand-of-the-art NLP tools and also include several original components covering a wide range of tasks including: tokenization/segmentation, compound splitting, stemming, part-of-speech tagging, lemmatization, constituency parsing, dependency parsing, named entity recognition, coreference resolution, language identification, spelling correction, grammar checking, and support for reading and writing various file and corpus formats. 
+Many NLP tools are already freely available in the NLP research community. DKPro Core \cite{TUD-CS-2014-0864} provides UIMA components wrapping these tools (and some original tools) so they can be used interchangeably in UIMA processing pipelines. The provided components wrap a constantly growing set of stand-of-the-art NLP tools and also include several original components written Java covering a wide range of tasks including: tokenization/segmentation, compound splitting, stemming, part-of-speech tagging, lemmatization, constituency parsing, dependency parsing, named entity recognition, coreference resolution, language identification, spelling correction, grammar checking, and support for reading and writing various file and corpus formats. 
 \
 \begin{figure}[H]
     \centering
@@ -71,6 +71,16 @@ In a nutshell, TC adds 4 more steps to DKPro Core:
   \item Data Processing and Cross Validation ??DEF 
   \item Report of the results (Accuracy, Macro F-Measure, ect...)
 \end{itemize}  
+
+The TC developers give regularly some helpful tutorials on their website\footnote{https://code.google.com/p/dkpro-tc/wiki/DemoExperiments}. 
+\
+\vspace{0.2cm}
+
+\textbf{License and usage}
+\\
+While most DKPro TC modules are available under the Apache Software License (ASL) version 2, there are a few modules that depend on external libraries and are thus licensed under the General Public Licence (GPL). 
+\\
+The SVN\footnote{Apache Subversion (often abbreviated SVN, after the command name svn) is a software versioning and revision control system distributed as free software under the Apache License.} commits of the different modules are available through Google code and the integration of new functionalities in a project is made possible by Maven (\cref{sec:maven}). It's also possible to use DKPro TC with Groovy which is an object-oriented programming language for the Java platform and destined to be run on a server. 
 
 
 
