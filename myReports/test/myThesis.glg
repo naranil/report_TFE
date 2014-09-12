@@ -1,13 +1,22 @@
 ;; This logfile was generated automatically by `xindy'
-;; at 09.09.2014  17:49:46
-;; Indexstyle: "/tmp/rQqjUxiXEa", Rawindex: "/tmp/WxlOW7va8y", Output: "myThesis.gls"
+;; at 12.09.2014  19:41:35
+;; Indexstyle: "/tmp/mMSgYjEELX", Rawindex: "/tmp/PNGJkPv4LE", Output: "myThesis.gls"
 
 
 Building indexentry-tree:
 Hierdepth of index is :TREE
 
 sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
+sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
+sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
 
 Forming letter-groups:
+Letter-group: "ÐàÈ—Ëå¨Ð— ´—€Ë¼¨¼" -> "S"
+Letter-group: "Ã´ €Ú€" -> "G"
+Letter-group: "ÚÃ®—¼" -> "T"
 sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
-Letter-group: "»€Ú¤—»€Ú¨†Ð" -> "M"
+Letter-group: "Ã´ €Ú€" -> "G"
+sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
+Letter-group: "ÐàÈ—Ëå¨Ð— ´—€Ë¼¨¼" -> "S"
+sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
+Letter-group: "ÚÃ®—¼" -> "T"

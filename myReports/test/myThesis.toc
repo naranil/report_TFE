@@ -14,7 +14,17 @@
 \contentsline {chapter}{\numberline {3}The Research Work}{7}
 \contentsline {section}{\numberline {3.1}Text Corpus}{7}
 \contentsline {subsection}{\numberline {3.1.1}Manual Annotation}{8}
-\contentsline {subsubsection}{\numberline {3.1.1.1}Categories in Persuasion}{8}
-\contentsline {subsubsection}{\numberline {3.1.1.2}Examples}{9}
-\contentsline {chapter}{\numberline {A}DKPro Core Overview}{10}
-\contentsline {chapter}{\numberline {B}Maven}{11}
+\contentsline {subsubsection}{\numberline {3.1.1.1}Sources of the data}{8}
+\contentsline {subsubsection}{\numberline {3.1.1.2}Categories in Persuasion}{8}
+\contentsline {subsubsection}{\numberline {3.1.1.3}Examples}{9}
+\contentsline {subsubsection}{\numberline {3.1.1.4}Annotation Process}{11}
+\contentsline {subsubsection}{\numberline {3.1.1.5}Results of the Manual Annotations}{11}
+\contentsline {subsection}{\numberline {3.1.2}Corpus Statistics}{12}
+\contentsline {subsection}{\numberline {3.1.3}Conflict Annotations}{12}
+\contentsline {section}{\numberline {3.2}Feature Engineering}{12}
+\contentsline {subsection}{\numberline {3.2.1}Lexical Features}{12}
+\contentsline {subsubsection}{\numberline {3.2.1.1}Tokens N-Grams}{12}
+\contentsline {chapter}{\numberline {A}DKPro Core Overview}{15}
+\contentsline {chapter}{\numberline {B}Maven}{16}
+\contentsline {chapter}{\numberline {C}Statistical Analysis of Binary Classification}{17}
+\contentsline {chapter}{\numberline {D}Units of linguistic morphology}{18}

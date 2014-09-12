@@ -22,14 +22,19 @@ Later in the internship, I started to use \textit{XMI} files\footnote{The XML Me
 
 \subsection{Manual Annotation}
 As mentioned before, the classification we want to perform is a supervised learning problem since it wants to imitate the human decision on judging if a post is persuasive or not. An annotation guideline was written by Ivan Habernal \cite{ivanguideline} in order for the annotators to understand the task. In this section, we'll discuss about the general ideas of this guideline.
+\subsubsection{Sources of the data}
+The textual data that will be used for the studies come from to kind of online sources:
+\\
+\texttt{artcomment: Article Comments, reactions to online articles}
+\\
+\texttt{forumpost: Forum Posts, posts in online debates}
 \subsubsection{Categories in Persuasion}
 \textbf{The task}: Distinguish, whether the comment is persuasive regarding the discussed topic. The key question to answer is: \textit{Does the author intend to convince us clearly about his/her attitude or opinion towards the topic?} If the answer is yes, we classify the comment as persuasive. There are two main categories in this task, namely \texttt{P1:Persuasive} and \texttt{P2:Non-persuasive}. The second category is further divided into more categories, that basically cover the various phenomena that may be encountered in the data.
 
 However, It is not necessary to categorize the data exactly into one of the categories under \texttt{P2:Non-persuasive}. For example, a particular text may be both off-topic and out-of-context; in that case, choose either of these categories.
 \\
 Remember: we are mainly interested in finding the \texttt{P1:Persuasive} documents that represent on-topic texts with intentions to persuade and convince the readers.
-\\
-\vspace{0.15cm}
+\vspace{0.1cm}
 \\
 \texttt{Quick overview of possible distinct categories:}
 \\
@@ -59,5 +64,189 @@ While the annotation phase, the annotators were charged of determining if a text
 awkward with others of their own gender. For example, certain girls who are tom-boys might not be comfortable in a room full of girls. The mixed genders are preparing kids for the real world, where things are not segregated.
 \end{minipage}}
 \\
-
+\\
 In \texttt{\#2013}, the author states that schools should not be single-sex, also provides reasons why he/she thinks so.
+\\
+\\
+\textbf{Problematic P1 case}
+\\
+\\
+This section discusses some examples that were marked as P1 by two annotators but as P2 by a third annotator. We will explain, where the third annotator made an error.
+\\
+\\
+\fbox{\begin{minipage}{1\textwidth}
+\textbf{\#300 (artcomment, homeschooling)} This is not representative of most homeschoolers. This is a very, very small minority. Let’s compare that to entire schools in the public school system that cater their teaching to make sure their kids pass the standardized tests so they can keep funding, meanwhile the kids can’t understand concepts that aren’t covered on the tests.
+
+I was homeschooled in Texas, where there is no government oversight of homeschooling. I graduated high school at age 16 with 24 college credits under my belt, was accepted into every university I applied to (all the major schools in Texas), and graduated college in three years at age 19 after being on the Dean’s List every semester except one. Neither of my parents has a college degree and would not be deemed ``qualified'' to teach me. Somehow I didn’t just make it, I thrived. Parental involvement works.
+\end{minipage}}
+\\
+\\
+The second paragraph in \texttt{\#300} contains a statement ``parental involvement works'', which is clearly in favor of homeschooling.
+\\
+\\
+\textbf{P2.1: Non-persuasive, out-of-context or reaction to other comment}
+\\
+\\
+\fbox{\begin{minipage}{1\textwidth}
+\textbf{\#3245 (artcomment, public-private-schools)} Why are they bad, they still pay taxes but don’t use the service so there is more money for the system to use on fixing its issues. Even when everyone is doing everything they can to fix something does not mean it will be fixed.
+\end{minipage}}
+\\
+\\
+In \texttt{\#3245}, without any context, we can only roughly guess what the author is writing about.
+\\
+\\
+\textbf{P2.3: Non-persuasive, off-topic}
+\\
+\\
+\fbox{\begin{minipage}{1\textwidth}
+\textbf{\#2049 (artcomment, single-sex-education)} Single-sex education. A poem./ Dearest
+people, the people/ always arguing and full of hate,/ why oh why should we ever/ turn out this way? Single-sex,/ co-educational, why does it matter?/ Girls, boys, everyone;/ WE CANNOT REMAIN LIKE THIS/ do you hear me?
+\end{minipage}}
+\\
+\\
+\textbf{P2.4: Non-persuasive, personal worries}
+\\
+\\
+\fbox{\begin{minipage}{1\textwidth}
+\textbf{\#5024 (artcomment, redshirting)} Oh boy. . . oh my little (but very tall) girl. I’ve chosen to put her into a second year of preschool next year (5 days instead of 3) because I feel that's what is right for her. She's a late October baby, but I'm not sure she's ready for kindergarten. But I worry. Will she be the giant of her class every year? Will there be an opportunity to skip her a grade? She's quite bright, but socially still a little awkward. I don't feel I'm ``holding her back", yet if she has brand new twin sisters arriving in July, should I totally turn her world upside down and ship her off to another school with mostly older kids? I'm torn (and totally on the fence) both ways. I want her to excel academically, but I don't want to throw too many changes at her at once. I'm with you, Erica. I'm torn, and I chose the now unpopular ``redshirting", but not so she can be a hockey superstar. . . :) I just thought this was a better pace for her. In ten years, I'm sure the ``experts" will be telling me I should have held
+her back, because all the young kids are struggling. . . You can't win.
+\end{minipage}}
+\\
+\\
+In \texttt{\#5024}, the author only expresses her worries about her child, but she neither takes stance on the topic nor argues about that.
+\\
+\\
+\textbf{P2.5: Non-persuasive, story-sharing without intentions to persuade}
+\\
+\\
+\fbox{\begin{minipage}{1\textwidth}
+\textbf{\#5030 (artcomment, redshirting)} Born in November, my youngest sister was among the oldest children in her peer group until she skipped a grade (I believe she skipped grade one but it may have been grade two). My other sister, also born in November and two years older, showed my youngest sister her homework and my youngest sister proved such a quick learner the teacher had no choice but to recommend she be moved up. She’s still achieving plenty and has never been intimidated by anyone older. She has a competitive drive and enjoys pushing herself forward.
+\end{minipage}}
+\\
+\\
+The purpose of \texttt{\#5030} was to share the story without taking stance towards the topic or persuading others (the story of her sister skipping a grade and doing well could is also too far from the redshirting topic).
+\\
+\\
+\textbf{P2.7: Non-persuasive, impossible to decide about persuasiveness without deep back-ground knowledge}
+\\
+\\
+\fbox{\begin{minipage}{1\textwidth}
+\textbf{\#164 (artcomment, homeschooling)}: Child abuse in the name of religious freedom. Just like parents who refuse medical treatment for their children. It makes me wish there was a hell.
+\end{minipage}}
+\\
+\\
+In \texttt{\#164}, without knowing the context that homeschooling and religion education are somehow related issues in some communities, it is not possible to decide about persuasiveness of this document.
+
+\subsubsection{Annotation Process}
+Three annotators were charged of labelling the data as P1 and P2 (if P2, he was asked to specify the subclass). For every annotations, the annotator could write a comment about why he thinks the text can be considered as persuasive or not. This comment can be useful especially if there's a conflict among the 3 annotators. 
+
+Once the annotations are performed, a discussion takes place with the annotators in order to solve issues and conflict annotations. If all annotators agree on the class (P1 or P2) of a text, the class will be set as the \emph{gold label} of this text. But if after the discussion, there's still a conflict, the text will be labelled according to majority. 
+
+To evaluate how well were the annotations, we compare statistical metrics that are described in~\cref{sec:stanabin} such as Recall, Precision, Accuracy and Macro $F_{1}$ measure. The comparison will be performed on 4 scenario: 
+\begin{itemize}
+  \item \textbf{$A_1$ vs $A_2$}
+  \item \textbf{$A_1$ vs $A_3$}
+  \item \textbf{$A_2$ vs $A_3$}
+  \item 3 Annotators \textbf{vs} \Gls{gold data}
+\end{itemize}
+$A_1$, $A_2$, $A_3$ stand for Annotator number 1, 2 and 3. 
+
+\subsubsection{Results of the Manual Annotations}
+We measure the performances of the annotations on 3 batches of text data, and we aggregate the results:
+\begin{table}[H]
+\begin{tabular}{lrrr|rrr|rrr}
+	&	&	&	& \multicolumn{3}{l}{Persuasive} & \multicolumn{3}{l}{Non-Persuasive} \\
+	& Docs	& Macro $F_1$ & Acc. & P & R	& $F_1$ & P & R & $F_1$ \\ \hline
+Batch 1	&	&	&	&	&	&	&	&	&\\
+A1	&100	&0.879	&0.880	&0.942	&0.845	&0.891	&0.813	&0.929	&0.867\\
+A2	&100	&0.895	&0.900	&0.875	&0.966	&0.918	&0.944	&0.810	&0.872\\
+A3	&100	&0.849	&0.850	&0.922	&0.810	&0.862	&0.776	&0.905	&0.835\\ \hline
+Batch 2	&	&	&	&	&	&	&	&	&\\
+A1	&200	&0.855	&0.855	&0.909	&0.792	&0.847	&0.813	&0.919	&0.863\\
+A2	&200	&0.910	&0.910	&0.919	&0.901	&0.910	&0.901	&0.919	&0.910\\
+A3	&200	&0.874	&0.875	&0.839	&0.931	&0.883	&0.920	&0.818	&0.866\\ \hline
+Batch 3	&	&	&	&	&	&	&	&	&\\
+A1	&509	&0.927	&0.927	&0.953	&0.906	&0.929	&0.902	&0.950	&0.926\\
+A2	&502	&0.879	&0.884	&0.836	&0.986	&0.905	&0.977	&0.757	&0.853\\
+A3	&511	&0.907	&0.908	&0.977	&0.835	&0.900	&0.857	&0.981	&0.915\\ \hline
+All data	&	&	&	&	&	&	&	&	&\\
+A1	&809	&0.904	&0.904	&0.942	&0.871	&0.905	&0.867	&0.940	&0.902\\
+A2	&802	&0.890	&0.893	&0.858	&0.964	&0.908	&0.948	&0.807	&0.872\\
+A3	&811	&0.893	&0.893	&0.929	&0.855	&0.890	&0.861	&0.932	&0.895\\
+\end{tabular}
+\caption{\label{tab:human-performance-annotation-study-1} Human performance on \emph{gold data persuasive}.}
+\end{table}
+??help: Find a way to say the results are good that's why we want to do a text classification.
+
+\subsection{Corpus Statistics}
+Now that we have the \emph{gold labels} for the texts, we can sum the relevant information in a table: 
+\begin{table}[h]
+\begin{tabular}{ll|l|l|l|l|l|l|l|}
+\cline{3-9}
+ &  & redshirting & prayer-in-schools & homeschooling & single-sex-education & mainstreaming & public-private-schools & Total \\ \hline
+\multicolumn{1}{|l|}{} & artcomment & 24 & 60 & 64 & 17 & 1 & 278 & 444 \\ \cline{2-9} 
+\multicolumn{1}{|l|}{} & forumpost & 14 & 17 & 22 & 9 & 9 & 9 & 80 \\ \cline{2-9} 
+\multicolumn{1}{|l|}{\multirow{-3}{*}{P1}} & \cellcolor[HTML]{C0C0C0}all & \cellcolor[HTML]{C0C0C0}38 & \cellcolor[HTML]{C0C0C0}77 & \cellcolor[HTML]{C0C0C0}86 & \cellcolor[HTML]{C0C0C0}26 & \cellcolor[HTML]{C0C0C0}10 & \cellcolor[HTML]{C0C0C0}287 & \cellcolor[HTML]{C0C0C0}524 \\ \hline
+\multicolumn{1}{|l|}{} & artcomment & 15 & 43 & 93 & 16 & 2 & 174 & 343 \\ \cline{2-9} 
+\multicolumn{1}{|l|}{} & forumpost & 15 & 23 & 45 & 8 & 17 & 15 & 123 \\ \cline{2-9} 
+\multicolumn{1}{|l|}{\multirow{-3}{*}{P2}} & \cellcolor[HTML]{C0C0C0}all & \cellcolor[HTML]{C0C0C0}30 & \cellcolor[HTML]{C0C0C0}66 & \cellcolor[HTML]{C0C0C0}138 & \cellcolor[HTML]{C0C0C0}24 & \cellcolor[HTML]{C0C0C0}19 & \cellcolor[HTML]{C0C0C0}189 & \cellcolor[HTML]{C0C0C0}466 \\ \hline
+\multicolumn{1}{|l|}{} & Total & 68 & 143 & 224 & 50 & 29 & 476 & 990 \\ \cline{2-9} 
+\multicolumn{1}{|l|}{\multirow{-2}{*}{P1  + P2}} & Percentage & 6.9 & 14.4 & 22.6 & 5.1 & 2.9 & 48.1 & 100 \\ \hline
+\end{tabular}
+\end{table}
+??Find a ways for the color and the size
+
+\subsection{Conflict Annotations}
+??Mention the conflict annotations + some statistics 
+\section{Feature Engineering}
+Now that we have all our data annotated, we have to extract relevant information from it in order to perform the classification. The problem of identifying persuasion in a text is a relatively new question in NLP and we don't have any straightforward methodology to find relevant features. Thus, we'll implement the NLP standard features that are used widely in other sub-fields of language processing and then we'll use the state-of-the-art features discovered in Argumentation Mining. A lot of modules of DKPro helped us to create our features but we had to extend somehow the software for certain functionalities that were not in DKPro Core and TC (for example the \emph{Sentiment Analysis}).
+
+\subsection{Lexical Features}   
+The adjective lexical refers to the words and the vocabulary of a corpus. This part will deal with the extraction of meaningful features related to words, sentences, \glspl{token}\footnote{Tokenization is the process of breaking a stream of text up into words, phrases, symbols, or other meaningful elements called tokens.}, punctuations, ect...
+
+\subsubsection{Tokens N-Grams}
+In NLP, an n-gram is a contiguous sequence of n (with n integer) items from a given sequence of text or speech. As a result of, tokens n-grams are sequences of tokens from a text (\textit{Note: } For more information about units in linguistics such as words, tokens, \gls{lemma} and \gls{stemma}, have a look at~\cref{sec:linmorph}). The study of n-grams distribution in a corpus is an ancient technique \cite{tcjullmann77} in language processing and it's usage is common in the field.
+
+In this study, we use a DKPro available feature that extracts the 10.000 most common 1,2 and 3-grams in all the corpus and returns for each text a 10000-dimensional binary vector. Each vector element corresponds to one of the 10000 extracted n-gram, its value is 1 the text contains the n-grams, 0 otherwise.
+\\
+To better understand this feature, let's take a simple example. We consider that the set of 1-grams contains 10 elements such as follow: 
+
+\begin{equation*}
+E = \{2, 1990, a, born, dog, Frankfurt, in, I, was, zoo\}
+\end{equation*}
+\\
+
+If the text input is:
+\\
+\centerline{\texttt{I was born in 1990}}
+\\
+
+DKPro will return the following binary 10-dimensional vector:
+\begin{table}[h]
+\center
+\begin{tabular}{llllllllll}
+2                       & 1990                   & a                      & born                   & dog                    & Frankfurt              & in                     & I                      & was                    & zoo                    \\ \hline
+\multicolumn{1}{|l|}{0} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{0} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{0} & \multicolumn{1}{l|}{0} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{0} \\ \hline
+\end{tabular}
+\end{table}
+
+As mentioned before, this feature is already implemented in DKPro and it's easy to use it in a pipeline.
+\
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.05\textwidth]{fig/ngramfeature.png}
+    \caption[Short caption]{NGram Feature in DKPro Java code}
+    \label{fig:ngramfeature}
+\end{figure}
+\
+
+As displayed on \ref{fig:ngramfeature}, the n-gram feature extractor takes three parameters: \emph{PARAM\_NGRAM\_MIN\_N} for the minimal value of n, \emph{PARAM\_NGRAM\_MAX\_N} for the maximal value of n and \emph{PARAM\_NGRAM\_USE\_TOP\_K} which is the number of common n-grams retained.
+Since we want the 10.000 most common 1,2 and 3-grams, the parameters are set such as follow:
+
+\begin{itemize}[label={}]
+  \item \texttt{PARAM\_NGRAM\_MIN\_N = 1}
+  \item \texttt{PARAM\_NGRAM\_MAX\_N = 3}
+  \item \texttt{PARAM\_NGRAM\_USE\_TOP\_K = 1}
+\end{itemize}
+
+

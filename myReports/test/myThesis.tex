@@ -6,6 +6,9 @@
 \usepackage{graphicx}
 \usepackage{cleveref}
 \usepackage{lipsum}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage[table,xcdraw]{xcolor}
 \bibliographystyle{plain}
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
@@ -21,15 +24,38 @@
     description={Is a mark up language specially suited 
     for scientific documents}
 }
+
 \newglossaryentry{supervised learning}
 {
 	name=supervised learning,
-	description={Supervised learning is the machine learning task of inferring a function from labelled training data.} 
+	description={Supervised learning is the machine learning task of inferring a function from labelled training data} 
 }
+
 \newglossaryentry{maths}
 {
     name=mathematics,
     description={Mathematics is what mathematicians do}
+}
+
+\newglossaryentry{gold data}{
+    name=gold data,
+    description={Bla bla}
+}
+
+\newglossaryentry{token}{
+    name=token,
+    description={Tokenization is the process of breaking a stream of text up into words, phrases, symbols, or other meaningful elements called tokens.},
+    plural=tokens
+}
+
+\newglossaryentry{lemma}{
+    name=lemma,
+    description={In morphology and lexicography, a lemma (plural lemmas or lemmata) is the canonical form, dictionary form, or citation form of a set of words (headword)[citation needed]. In English, for example, run, runs, ran and running are forms of the same lexeme, with run as the lemma.},
+}
+
+\newglossaryentry{stemma}{
+    name=stemma,
+    description={?},
 }
 
 \begin{document}

@@ -22,7 +22,13 @@
 \providecommand*\glsXpageXhypersc[2]{\setentrycounter[#1]{page}\hypersc{#2}}
 \providecommand*\glsXpageXhyperemph[2]{\setentrycounter[#1]{page}\hyperemph{#2}}
 \begin{theglossary}\glossaryheader
-\glsgroupheading{M}\relax\glsresetentrylist
-\glossaryentryfield{maths}{\glsnamefont{mathematics}}{Mathematics is what mathematicians do}{\relax }{\glossaryentrynumbers{\relax 
-\glsXpageXglsnumberformat{}{3}}}%
+\glsgroupheading{G}\relax\glsresetentrylist
+\glossaryentryfield{gold data}{\glsnamefont{gold data}}{Bla bla}{\relax }{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{11}}}\glsgroupskip
+\glsgroupheading{S}\relax\glsresetentrylist
+\glossaryentryfield{supervised learning}{\glsnamefont{supervised learning}}{Supervised learning is the machine learning task of inferring a function from labelled training data}{\relax }{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{4}}}\glsgroupskip
+\glsgroupheading{T}\relax\glsresetentrylist
+\glossaryentryfield{token}{\glsnamefont{token}}{Tokenization is the process of breaking a stream of text up into words, phrases, symbols, or other meaningful elements called tokens.}{\relax }{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{12}}}%
 \end{theglossary}\glossarypostamble

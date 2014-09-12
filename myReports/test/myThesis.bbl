@@ -26,4 +26,10 @@ Ivan Habernal, Judith Eckle-Kohler, and Iryna Gurevych.
 \newblock In {\em Frontiers and Connections between Argumentation Theory and
   Natural Language Processing}, page (to appear), July 2014.
 
+\bibitem{tcjullmann77}
+Julian~R. Ullmann.
+\newblock A binary $n$-gram technique for automatic correction of substitution,
+  deletion, insertion and reversal errors in words.
+\newblock {\em The Computer Journal}, 20(2):141--147, 1977.
+
 \end{thebibliography}
