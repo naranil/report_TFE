@@ -4,47 +4,47 @@ The top-level auxiliary file: myThesis.aux
 The style file: plain.bst
 Database file #1: bib/Bibliography.bib
 Warning--entry type for "uima:Online" isn't style-file defined
---line 78 of file bib/Bibliography.bib
+--line 101 of file bib/Bibliography.bib
 Warning--to sort, need author or key in uima:Online
-You've used 5 entries,
+You've used 7 entries,
             2118 wiz_defined-function locations,
-            527 strings with 5198 characters,
-and the built_in function-call counts, 1805 in all, are:
-= -- 176
-> -- 72
-< -- 2
-+ -- 31
-- -- 24
-* -- 109
-:= -- 265
-add.period$ -- 13
-call.type$ -- 5
-change.case$ -- 27
+            543 strings with 5859 characters,
+and the built_in function-call counts, 2808 in all, are:
+= -- 279
+> -- 118
+< -- 4
++ -- 49
+- -- 40
+* -- 176
+:= -- 412
+add.period$ -- 20
+call.type$ -- 7
+change.case$ -- 41
 chr.to.int$ -- 0
-cite$ -- 6
-duplicate$ -- 88
-empty$ -- 153
-format.name$ -- 24
-if$ -- 404
+cite$ -- 8
+duplicate$ -- 132
+empty$ -- 230
+format.name$ -- 40
+if$ -- 630
 int.to.chr$ -- 0
-int.to.str$ -- 5
-missing$ -- 4
-newline$ -- 26
-num.names$ -- 8
-pop$ -- 42
+int.to.str$ -- 7
+missing$ -- 6
+newline$ -- 36
+num.names$ -- 12
+pop$ -- 61
 preamble$ -- 1
-purify$ -- 22
+purify$ -- 34
 quote$ -- 0
-skip$ -- 75
+skip$ -- 111
 stack$ -- 0
-substring$ -- 93
-swap$ -- 35
-text.length$ -- 2
+substring$ -- 159
+swap$ -- 54
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 20
+type$ -- 28
 warning$ -- 1
-while$ -- 14
-width$ -- 6
-write$ -- 52
+while$ -- 24
+width$ -- 8
+write$ -- 76
 (There were 2 warnings)

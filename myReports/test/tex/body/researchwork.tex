@@ -246,7 +246,152 @@ Since we want the 10.000 most common 1,2 and 3-grams, the parameters are set suc
 \begin{itemize}[label={}]
   \item \texttt{PARAM\_NGRAM\_MIN\_N = 1}
   \item \texttt{PARAM\_NGRAM\_MAX\_N = 3}
-  \item \texttt{PARAM\_NGRAM\_USE\_TOP\_K = 1}
+  \item \texttt{PARAM\_NGRAM\_USE\_TOP\_K = 10000}
 \end{itemize}
 
+We also implemented a subclass from the n-grams extractors to have the lemma instead of the tokens. We thought that it would give us better results since lemma refer to a general form of a word (ex: \emph{be} instead of \emph{are}, \emph{was}, \emph{is}, ect...) but in \emph{a posteriori} analyses, we don't see any improvements in our results. At the result of, we'll only consider tokens n-grams in our features.
 
+The Tokens N-Grams feature will give us results for our \emph{Baseline Analysis}: more complex models and pipelines will systematically be compared to this ``simple" model.
+
+\subsubsection{Tokens and Sentences}
+We compute some statistics regarding sentences and sentences in a text:
+\begin{itemize}
+  \item Number of sentences and tokens in a text.
+  \item Maximum size (in character) of a token and a sentence in a text.
+  \item Minimum size (in character) of a token and a sentence in a text.
+  \item Average size (in character) of tokens and sentences in a text. 
+\end{itemize} 
+\
+As an example, if we consider the following text as input:
+\\
+\\
+\fbox{\begin{minipage}{1\textwidth}
+\textbf{208\_P2\_artcomment\_homeschooling.txt} ``Not having read any of the standard high school literature, people make references I don’t get." 
+Got news for you. They're not making references to required high school readings. More likely Internet and pop culture. 
+I hope you succeed getting some accountability in to the system. What is this issue, gun ownership? 
+\end{minipage}}
+\\
+\\
+The outputs are the following descriptive statistics:
+\begin{itemize}
+  \item \textbf{6} sentences in this text.
+  \item The minimal sentence is ``Got news for you" and its size is \textbf{18} characters. 
+  \item The maximal sentence is ``Not having read any of the standard high school literature, people make references I don’t get." and its size is \textbf{100} characters.
+  \item The average size for a sentence is \textbf{53.3} characters.
+\end{itemize}  
+\
+and besides:
+\
+\begin{itemize}
+  \item \textbf{67} tokens.
+  \item The minimal token is ``I" and its size is \textbf{1} characters. 
+  \item The maximal sentence is ``accountability" and its size is \textbf{14} characters.
+  \item The average size for a token is \textbf{4.0} characters.
+\end{itemize}  
+
+The features related to minimal sizes wouldn't give us much information about a text since a words like \emph{a} or \emph{I} are usually used. On the other hand, the maximal size, total number and average size related features might be very useful since they quantify somehow the interest of an author in a conversation/debate.
+
+\subsubsection{Other Lexical Statistics}
+In the article \emph{Stance Classification of Ideological Debates}\cite{Hasan-Ng:IJCNLP:2013}, Hasan defines 3 simple features which help to perform stance classification:
+\
+\begin{itemize}
+  \item Length in characters of a text.
+  \item Ratio of tokens with more than 6 characters.
+  \item Average number of tokens per sentence.
+\end{itemize}  
+
+\subsubsection{Punctuation Related Features}
+First, we defined a set of features which simply compute the ratio per token of these 6 punctuation marks full stop, comma, question mark, exclamation mark, colon and quotation mark (\cref{punctuation}). This would tell us if the author is caring about his style of writing.
+\\
+\begin{figure}[h]
+\begin{center}
+\texttt{\textbf{.  ,  ?  !  :  "}}
+\caption{\label{punctuation} 6 punctuation marks}
+\end{center}
+\end{figure}
+
+Another punctuation feature inspired by \emph{An} and \emph{Walker} \cite{anand-EtAl:2011:WASSA2011} is the repeated punctuation feature that computes the number of repeated punctuation (such as ``!!!!!" or ``!??!") in a text. In practice, this feature requires the following \emph{regular expression}\footnote{In theoretical computer science and formal language theory, a regular expression (abbreviated regex or regexp) is a sequence of characters that forms a search pattern, mainly for use in pattern matching with strings, or string matching, i.e. "find and replace"-like operations.}: \textbf{\texttt{[?!.,]+}}
+\
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{fig/multiplepunc.png}
+    \caption[Short caption]{Piece of code for the multiple punctuation feature}
+    \label{fig:multipunc}
+\end{figure}
+\
+This feature can be a good representation of aggressiveness and poor argumentation in a debate, as it can be seen in the following example:
+\\
+\fbox{\begin{minipage}{1\textwidth}
+\textbf{208\_P2\_artcomment\_homeschooling.txt} smarmy bastard 2011/09/19 at 6:00 PM "â€¦ok so obviously , there are more free thinkers who would agree with you, .... and because there are more than one free thinker(s) , it becomes a group of free thinkers ...who all agree ... hmmm (head hits floor)" \_\_\_ 
+Smarmy: now you're just being disagreeable. If many people independently think for themselves, without being told what, when, and how to think, it does not follow that they all think the same thing. "Following" is an attribute reserved for religion. 
+Me thinks your head may have hit the floor too hard this time.
+\end{minipage}}
+
+\subsubsection{Multiple Capital Letters}
+Another feature that can reflect the lack of seriousness is the number of words with multiple capital letters. In the following example, there are 3 words with multiple capital letters:
+\\
+\\
+\fbox{\begin{minipage}{1\textwidth}
+\textbf{3144\_P2\_artcomment\_public-private-schools.txt} WRONG - NO !! Perhaps bad psychology, bad child rearing, perhaps. They are paying for the public schools, its called  TAXES!! 
+\end{minipage}} 	 	
+
+\subsection{Part Of Speech Features}
+In grammar, parts of speech (abbreviation: POS) are the linguistic categories of words such as verb, noun, ect... In DKPro the POS are modelled as subclasses of the class \emph{POS}, which is an annotation. 
+
+\subsubsection{Ratio on common POS}
+One simple feature, already implemented in DKPro\footnote{In TC Google code, have a look at de/tudarmstadt/ukp/dkpro/tc/features/syntax/POSRatioFeatureExtractor.java}, computes 11 ratios of 11 different over the total number of POS:
+
+\begin{table}[h]
+\center
+\begin{tabular}{|l|l|l|}
+\hline
+\rowcolor[HTML]{9B9B9B} 
+POS             & Abbreviation & Examples         \\ \hline
+Adjective       & ADJ          & good, tall       \\ \hline
+Adverb          & ADV          & quickly, lightly \\ \hline
+Article         & ART          & a, the           \\ \hline
+Cardinal Number & CARD         & one, eighty-two  \\ \hline
+Conjunction     & CONJ         & for, and         \\ \hline
+Noun            & N            & cat, Germany     \\ \hline
+Exclamation     & O            & O, oh!           \\ \hline
+Preposition     & PP           & above, within    \\ \hline
+Pronoun         & PR           & I, she           \\ \hline
+Punctuation     & PUNC         & ``.", ``;"       \\ \hline
+Verb            & V            & to be, had       \\ \hline
+\end{tabular}
+\caption{\label{11pos} The 11 POS we consider for the Ratio POS feature}
+\end{table}
+
+??TODO: Investigate why no all the black lines
+
+The DKPro functions allow to compute the ratios and thus create the features very easily as seen on \cref{fig:11poscode}.
+\
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{fig/11pos.png}
+    \caption[Short caption]{Piece of code for the multiple punctuation feature}
+    \label{fig:11poscode}
+\end{figure}
+\
+\subsubsection{Comparative and Superlative}
+The previous features don't consider the ratios of comparative and superlative (for adverbs and adjectives) in a text but they are relevant in debates since opponents usually keep on comparing the different point of views.
+
+\subsubsection{Modal Verbs}
+Again, in a more granulate analysis, we can evaluate the ratios for the 9 common ratios in English: can, could, may, might, must, shall, should, will and would.
+
+\subsubsection{POS NGrams}
+By analogy with the Token NGrams feature, DKPro has a POS NGrams feature. As an example, if you consider the sentence:
+
+\begin{table}[h]
+\center
+\begin{tabular}{cccccc}
+This & Virginia & law & is & insane & .    \\
+\texttt{ART}  & \texttt{NP}       & \texttt{NN}  & \texttt{V}  & \texttt{ADJ}    & \texttt{PUNC}
+\end{tabular}
+\end{table}\
+\\
+The POS 1-grams are: \texttt{ART, NP, NN, V, ADJ, PUNC}
+\\
+The POS 2-grams are: \texttt{ART\_NP, NP\_NN, NN\_V, V\_ADJ, ADJ\_PUNC}
+\\
+and so on \ldots
