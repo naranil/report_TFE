@@ -3,6 +3,13 @@
 \bibitem{uima:Online}
 Overview and setup, uima.apache.org, 2006.
 
+\bibitem{ágel2006dependency}
+V.~{\'A}gel.
+\newblock {\em Dependency and valency: an international handbook of
+  contemporary research}.
+\newblock Dependenz und Valenz: ein internationales Handbuch der
+  zeitgen{\"o}ssischen Forschung. de Gruyter, 2006.
+
 \bibitem{anand-EtAl:2011:WASSA2011}
 Pranav Anand, Marilyn Walker, Rob Abbott, Jean~E. Fox~Tree, Robeson Bowmani,
   and Michael Minor.
@@ -40,6 +47,13 @@ Kazi~Saidul Hasan and Vincent Ng.
   and constraints.
 \newblock In {\em Proceedings of the Sixth International Joint Conference on
   Natural Language Processing}, pages 1348--1356, 2013.
+
+\bibitem{TUD-CS-2014-0882}
+Christian Stab and Iryna Gurevych.
+\newblock Identifying argumentative discourse structures in persuasive essays.
+\newblock In {\em Conference on Empirical Methods in Natural Language
+  Processing (EMNLP 2014)}, page (to appear), Stroudsburg, PA, USA, October
+  2014. Association for Computational Linguistics.
 
 \bibitem{tcjullmann77}
 Julian~R. Ullmann.

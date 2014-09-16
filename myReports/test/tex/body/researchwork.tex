@@ -379,7 +379,7 @@ The previous features don't consider the ratios of comparative and superlative (
 \subsubsection{Modal Verbs}
 Again, in a more granulate analysis, we can evaluate the ratios for the 9 common ratios in English: can, could, may, might, must, shall, should, will and would.
 
-\subsubsection{POS NGrams}
+\subsubsection{POS N-Grams}
 By analogy with the Token NGrams feature, DKPro has a POS NGrams feature. As an example, if you consider the sentence:
 
 \begin{table}[h]
@@ -395,3 +395,41 @@ The POS 1-grams are: \texttt{ART, NP, NN, V, ADJ, PUNC}
 The POS 2-grams are: \texttt{ART\_NP, NP\_NN, NN\_V, V\_ADJ, ADJ\_PUNC}
 \\
 and so on \ldots
+\\
+Unfortunately, the POS n-grams tend to introduce some noise and redundancy in our classification, so we won't use them much.
+
+\subsection{Syntactic features}
+The \emph{syntax} is the study of how languages are constructed in a certain language. We'll define in this part the syntax related. Syntax is very descriptive, most of the syntactic representations of sentences, texts are often graphs, tables, ect... We'll see how we came with the quantitative features needed to perform the classification.
+
+\subsubsection{Depth of the Dependency Tree}
+\textbf{Dependency Tree}
+\\
+\\
+In V {\'A}gel's works \cite{ágel2006dependency}, the dependency tree is a graph that maps the relations between the different grammar units in a sentence. The theory behind is long long and arduous and we leave to the reader the study of dependency trees. Nevertheless, we give in the following figure (\ref{fig:deptree}), a simple example of a dependency tree.
+
+For the sentence \texttt{I shot an elephant in my pajamas}, we get the following tree:
+\
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{fig/deptree.png}
+    \caption[Short caption]{A dependency tree}
+    \label{fig:deptree}
+\end{figure}
+\
+To quantify how complex a sentence can be, we took inspiration on Christian Stab work on Argumentative Discourse \cite{TUD-CS-2014-0882} by calculating the depth of the dependency tree for every sentence. The depth of a tree is the number of edges between the first node and the furthest extremity in the tree. In \cref{fig:deptree}, the depth of the tree is 5.
+\
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{fig/deptreepath.png}
+    \caption[Short caption]{5 edges between the summit S and the extremities Det and N}
+    \label{fig:deptreepath}
+\end{figure}
+\
+
+
+
+
+
+
+
+

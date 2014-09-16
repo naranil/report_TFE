@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.8.26)  15 SEP 2014 20:08
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.8.26)  16 SEP 2014 19:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -764,61 +764,78 @@ File: fig/11pos.png Graphic file (type png)
  <use fig/11pos.png>
 Package pdftex.def Info: fig/11pos.png used on input line 371.
 (pdftex.def)             Requested size: 271.7835pt x 124.79427pt.
- [16])
-[17 <./fig/11pos.png>] (./tex/material/appendix.tex
+ [16]
+Underfull \hbox (badness 10000) in paragraph at lines 405--409
+
+ []
+
+[17 <./fig/11pos.png>] <fig/deptree.png, id=85, 480.79625pt x 295.1025pt>
+File: fig/deptree.png Graphic file (type png)
+
+<use fig/deptree.png>
+Package pdftex.def Info: fig/deptree.png used on input line 414.
+(pdftex.def)             Requested size: 317.07614pt x 194.61964pt.
+ <fig/deptreepath.png, id=87, 480.79625pt x 295.1025pt>
+File: fig/deptreepath.png Graphic file (type png)
+
+<use fig/deptreepath.png>
+Package pdftex.def Info: fig/deptreepath.png used on input line 423.
+(pdftex.def)             Requested size: 317.07614pt x 194.61964pt.
+) [18 <./fig/deptree.png> <./fig/deptreepath.png>]
+[19] (./tex/material/appendix.tex
 Appendix A.
-<fig/dkpro-overview.png, id=85, 978.65625pt x 533.995pt>
+<fig/dkpro-overview.png, id=96, 978.65625pt x 533.995pt>
 File: fig/dkpro-overview.png Graphic file (type png)
 
 <use fig/dkpro-overview.png>
 Package pdftex.def Info: fig/dkpro-overview.png used on input line 4.
 (pdftex.def)             Requested size: 452.9679pt x 247.16437pt.
- [18
+ [20
 
 
  <./fig/dkpro-overview.png>]
 Appendix B.
-[19
-
-]
-Appendix C.
-[20
-
-]
-Appendix D.
 [21
 
 ]
+Appendix C.
+[22
+
+]
+Appendix D.
+[23
+
+]
 Appendix E.
-) (./myThesis.gls [22
+) (./myThesis.gls [24
 
-]) (./myThesis.bbl [23
+]) (./myThesis.bbl [25
 
-]) [24
+] [26
 
-] (./myThesis.aux) ) 
+]) [27] (./myThesis.aux) ) 
 Here is how much of TeX's memory you used:
- 8475 strings out of 493307
- 128818 string characters out of 6139905
- 353734 words of memory out of 5000000
- 11739 multiletter control sequences out of 15000+600000
+ 8493 strings out of 493307
+ 129143 string characters out of 6139905
+ 353812 words of memory out of 5000000
+ 11755 multiletter control sequences out of 15000+600000
  10851 words of font info for 39 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  46i,12n,41p,1443b,288s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
-i12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmtt12.pfb>
-Output written on myThesis.pdf (28 pages, 579955 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on myThesis.pdf (31 pages, 599456 bytes).
 PDF statistics:
- 141 PDF objects out of 1000 (max. 8388607)
- 93 compressed objects within 1 object stream
+ 157 PDF objects out of 1000 (max. 8388607)
+ 101 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

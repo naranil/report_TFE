@@ -32,9 +32,11 @@
 \contentsline {subsubsection}{\numberline {3.2.2.1}Ratio on common POS}{16}
 \contentsline {subsubsection}{\numberline {3.2.2.2}Comparative and Superlative}{17}
 \contentsline {subsubsection}{\numberline {3.2.2.3}Modal Verbs}{17}
-\contentsline {subsubsection}{\numberline {3.2.2.4}POS NGrams}{17}
-\contentsline {chapter}{\numberline {A}DKPro Core Overview}{18}
-\contentsline {chapter}{\numberline {B}Maven}{19}
-\contentsline {chapter}{\numberline {C}Statistical Analysis of Binary Classification}{20}
-\contentsline {chapter}{\numberline {D}Units of linguistic morphology}{21}
-\contentsline {chapter}{\numberline {E}Parts Of Speech}{22}
+\contentsline {subsubsection}{\numberline {3.2.2.4}POS N-Grams}{17}
+\contentsline {subsection}{\numberline {3.2.3}Syntactic features}{17}
+\contentsline {subsubsection}{\numberline {3.2.3.1}Depth of the Dependency Tree}{18}
+\contentsline {chapter}{\numberline {A}DKPro Core Overview}{20}
+\contentsline {chapter}{\numberline {B}Maven}{21}
+\contentsline {chapter}{\numberline {C}Statistical Analysis of Binary Classification}{22}
+\contentsline {chapter}{\numberline {D}Units of linguistic morphology}{23}
+\contentsline {chapter}{\numberline {E}Parts Of Speech}{24}
