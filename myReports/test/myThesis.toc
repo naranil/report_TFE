@@ -4,39 +4,45 @@
 \contentsline {chapter}{\numberline {2}Background}{2}
 \contentsline {section}{\numberline {2.1}Argumentation}{2}
 \contentsline {subsection}{\numberline {2.1.1}General Definitions}{2}
-\contentsline {subsection}{\numberline {2.1.2}Persuasion}{2}
-\contentsline {subsection}{\numberline {2.1.3}Persuasion 2.0}{2}
-\contentsline {section}{\numberline {2.2}NLP and the DKPro Framework}{2}
-\contentsline {subsection}{\numberline {2.2.1}Natural Language Processing}{2}
-\contentsline {subsection}{\numberline {2.2.2}UIMA}{2}
-\contentsline {subsection}{\numberline {2.2.3}DKPro Core}{3}
-\contentsline {subsection}{\numberline {2.2.4}DKPro Text Classification}{4}
-\contentsline {chapter}{\numberline {3}The Research Work}{7}
-\contentsline {section}{\numberline {3.1}Text Corpus}{7}
-\contentsline {subsection}{\numberline {3.1.1}Manual Annotation}{8}
-\contentsline {subsubsection}{\numberline {3.1.1.1}Sources of the data}{8}
-\contentsline {subsubsection}{\numberline {3.1.1.2}Categories in Persuasion}{8}
-\contentsline {subsubsection}{\numberline {3.1.1.3}Examples}{9}
-\contentsline {subsubsection}{\numberline {3.1.1.4}Annotation Process}{11}
-\contentsline {subsubsection}{\numberline {3.1.1.5}Results of the Manual Annotations}{11}
-\contentsline {subsection}{\numberline {3.1.2}Corpus Statistics}{12}
-\contentsline {subsection}{\numberline {3.1.3}Conflict Annotations}{12}
-\contentsline {section}{\numberline {3.2}Feature Engineering}{12}
-\contentsline {subsection}{\numberline {3.2.1}Lexical Features}{12}
-\contentsline {subsubsection}{\numberline {3.2.1.1}Tokens N-Grams}{12}
-\contentsline {subsubsection}{\numberline {3.2.1.2}Tokens and Sentences}{14}
-\contentsline {subsubsection}{\numberline {3.2.1.3}Other Lexical Statistics}{15}
-\contentsline {subsubsection}{\numberline {3.2.1.4}Punctuation Related Features}{15}
-\contentsline {subsubsection}{\numberline {3.2.1.5}Multiple Capital Letters}{16}
-\contentsline {subsection}{\numberline {3.2.2}Part Of Speech Features}{16}
-\contentsline {subsubsection}{\numberline {3.2.2.1}Ratio on common POS}{16}
-\contentsline {subsubsection}{\numberline {3.2.2.2}Comparative and Superlative}{17}
-\contentsline {subsubsection}{\numberline {3.2.2.3}Modal Verbs}{17}
-\contentsline {subsubsection}{\numberline {3.2.2.4}POS N-Grams}{17}
-\contentsline {subsection}{\numberline {3.2.3}Syntactic features}{17}
-\contentsline {subsubsection}{\numberline {3.2.3.1}Depth of the Dependency Tree}{18}
-\contentsline {chapter}{\numberline {A}DKPro Core Overview}{20}
-\contentsline {chapter}{\numberline {B}Maven}{21}
-\contentsline {chapter}{\numberline {C}Statistical Analysis of Binary Classification}{22}
-\contentsline {chapter}{\numberline {D}Units of linguistic morphology}{23}
-\contentsline {chapter}{\numberline {E}Parts Of Speech}{24}
+\contentsline {subsection}{\numberline {2.1.2}Persuasion}{3}
+\contentsline {subsection}{\numberline {2.1.3}Persuasion 2.0}{3}
+\contentsline {section}{\numberline {2.2}NLP and the DKPro Framework}{3}
+\contentsline {subsection}{\numberline {2.2.1}Natural Language Processing}{3}
+\contentsline {subsection}{\numberline {2.2.2}UIMA}{3}
+\contentsline {subsection}{\numberline {2.2.3}DKPro Core}{4}
+\contentsline {subsection}{\numberline {2.2.4}DKPro Text Classification}{5}
+\contentsline {chapter}{\numberline {3}The Research Work}{8}
+\contentsline {section}{\numberline {3.1}Text Corpus}{8}
+\contentsline {subsection}{\numberline {3.1.1}Manual Annotation}{9}
+\contentsline {subsubsection}{\numberline {3.1.1.1}Sources of the data}{9}
+\contentsline {subsubsection}{\numberline {3.1.1.2}Categories in Persuasion}{9}
+\contentsline {subsubsection}{\numberline {3.1.1.3}Examples}{10}
+\contentsline {subsubsection}{\numberline {3.1.1.4}Annotation Process}{12}
+\contentsline {subsubsection}{\numberline {3.1.1.5}Results of the Manual Annotations}{12}
+\contentsline {subsection}{\numberline {3.1.2}Corpus Statistics}{13}
+\contentsline {subsection}{\numberline {3.1.3}Conflict Annotations}{13}
+\contentsline {section}{\numberline {3.2}Feature Engineering}{13}
+\contentsline {subsection}{\numberline {3.2.1}Lexical Features}{13}
+\contentsline {subsubsection}{\numberline {3.2.1.1}Tokens N-Grams}{13}
+\contentsline {subsubsection}{\numberline {3.2.1.2}Tokens and Sentences}{15}
+\contentsline {subsubsection}{\numberline {3.2.1.3}Other Lexical Statistics}{16}
+\contentsline {subsubsection}{\numberline {3.2.1.4}Punctuation Related Features}{16}
+\contentsline {subsubsection}{\numberline {3.2.1.5}Multiple Capital Letters}{17}
+\contentsline {subsection}{\numberline {3.2.2}Part Of Speech Features}{17}
+\contentsline {subsubsection}{\numberline {3.2.2.1}Ratio on common POS}{17}
+\contentsline {subsubsection}{\numberline {3.2.2.2}Comparative and Superlative}{18}
+\contentsline {subsubsection}{\numberline {3.2.2.3}Modal Verbs}{18}
+\contentsline {subsubsection}{\numberline {3.2.2.4}POS N-Grams}{18}
+\contentsline {subsection}{\numberline {3.2.3}Syntactic features}{18}
+\contentsline {subsubsection}{\numberline {3.2.3.1}Depth of the Dependency Tree}{19}
+\contentsline {subsubsection}{\numberline {3.2.3.2}Dependency Rules}{20}
+\contentsline {subsubsection}{\numberline {3.2.3.3}Subordinate clauses}{20}
+\contentsline {subsection}{\numberline {3.2.4}Sentiment Analysis Feature}{21}
+\contentsline {subsubsection}{\numberline {3.2.4.1}Sentiment Coefficients}{22}
+\contentsline {subsubsection}{\numberline {3.2.4.2}Sentiment Fluctuation}{23}
+\contentsline {subsection}{\numberline {3.2.5}LDA}{23}
+\contentsline {chapter}{\numberline {A}DKPro Core Overview}{24}
+\contentsline {chapter}{\numberline {B}Maven}{25}
+\contentsline {chapter}{\numberline {C}Statistical Analysis of Binary Classification}{26}
+\contentsline {chapter}{\numberline {D}Units of linguistic morphology}{27}
+\contentsline {chapter}{\numberline {E}Parts Of Speech}{28}

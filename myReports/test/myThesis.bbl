@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{uima:Online}
 Overview and setup, uima.apache.org, 2006.
@@ -26,6 +26,13 @@ Richard~Eckart de~Castilho and Iryna Gurevych.
   Analysis Frameworks for HLT (OIAF4HLT) at COLING 2014}, pages 1--11, August
   2014.
 
+\bibitem{freeley2000argumentation}
+A.J. Freeley and D.L. Steinberg.
+\newblock {\em Argumentation and Debate: Critical Thinking for Reasoned
+  Decision Making}.
+\newblock Wadsworth series in speech communication. Wadsworth/Thomson Learning,
+  2000.
+
 \bibitem{GurevychEtal2007dkpro0}
 Iryna Gurevych, Max M{\"u}hlh{\"a}user, Christof M{\"u}ller, J{\"u}rgen
   Steimle, Markus Weimer, and Torsten Zesch.
@@ -47,6 +54,16 @@ Kazi~Saidul Hasan and Vincent Ng.
   and constraints.
 \newblock In {\em Proceedings of the Sixth International Joint Conference on
   Natural Language Processing}, pages 1348--1356, 2013.
+
+\bibitem{Nivre_aquick}
+Joakim Nivre and Johan Hall.
+\newblock A quick guide to maltparser optimization.
+
+\bibitem{Socher_recursivedeep}
+Richard Socher, Alex Perelygin, Jean~Y. Wu, Jason Chuang, Christopher~D.
+  Manning, Andrew~Y. Ng, and Christopher Potts.
+\newblock Recursive deep models for semantic compositionality over a sentiment
+  treebank.
 
 \bibitem{TUD-CS-2014-0882}
 Christian Stab and Iryna Gurevych.

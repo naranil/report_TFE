@@ -425,6 +425,112 @@ To quantify how complex a sentence can be, we took inspiration on Christian Stab
     \label{fig:deptreepath}
 \end{figure}
 \
+\\
+\\
+\textbf{Building features with this metric}
+\\
+The dependency tree is available on DKPro with the \emph{MaltParser}\cite{Nivre_aquick}. For every input sentence, it returns the corresponding dependency tree, such as follow: 
+\begin{figure}[h]
+\begin{center}
+\texttt{(S (NP I) (VP (V shot) (NP (Det an) (N elephant) (PP (P in) (NP (Det my) (N pajamas))))))}
+\caption{\label{dkprotree} MaltParser's output tree}
+\end{center}
+\end{figure}
+Certain functions allow to evaluate the depth of this kind of tree. Even so, our base unit for the classification is the text (and not the sentence), so we need to compute certain statistics over the sentences:
+\\
+\textbf{Maximal Tree}
+
+If \emph{depth} is a function that returns the depth of a tree, the biggest tree in a text has a size of:
+\begin{equation*}
+\underset{s \in text}{max} \; depth(s)
+\end{equation*}
+\\
+Where the dummy variable \emph{s} corresponds here to a sentence.
+\\
+\\
+\textbf{Average length of a tree}
+
+Here we simply calculate the tree depth average on all the sentences:
+\begin{equation*}
+\frac{1}{|s|} \; \displaystyle\sum_{s \in text} depth(s)
+\end{equation*}
+
+Bla bla ?
+
+\subsubsection{Dependency Rules}
+Similarly to the tokens n-grams and the POS n-grams, it's possible to define dependencies n-grams, simply called dependency rules \cite{TUD-CS-2014-0882}. As an example, some of the dependency rules from the previous tree (\cref{fig:deptree}) are : VP $\rightarrow$ NP, NP $\rightarrow$ PP $\rightarrow$ NP, ect...
+
+In our study, we extract 5000 dependency rules from the all corpus and compute binary vectors that show the presence or not of a dependency rule.
+
+\subsubsection{Subordinate clauses}
+\textbf{Clause}
+\\
+In grammar, a clause is the smallest grammatical unit that can express a complete proposition. 
+\\
+\textbf{Subordinate clause}
+\\
+Subordination as a concept of syntactic organization is associated closely with the distinction between coordinate and subordinate clauses. One clause is subordinate to another, if it depends on it. The dependent clause is called a subordinate clause and the independent clause is called the main clause.
+
+We can distinguish 5 kind of subordinate clauses:
+\begin{itemize}
+  \item \texttt{Clause S} - simple declarative clause, i.e. one that is not introduced by a (possible empty) subordinating conjunction or a \emph{wh-word}\footnote{interrogative word or question word} and that does not exhibit subject-verb inversion.
+  \item \texttt{Clause SBAR} - Clause introduced by a (possibly empty) subordinating conjunction.
+  \item \texttt{Clause SBARQ} - Direct question introduced by a wh-word or a wh-phrase. Indirect questions and relative clauses should be bracketed as SBAR, not SBARQ.
+  \item \texttt{Clause SINV} - Inverted declarative sentence, i.e. one in which the subject follows the tensed verb or modal. 
+  \item \texttt{Clause SQ} - Inverted yes/no question, or main clause of a wh-question, following the wh-phrase in SBARQ.
+\end{itemize} 
+\
+??TRY to find some examples....
+
+To evaluate the importance of those clauses in the text, we built a feature that calculate the maximum number of clauses per sentence. This feature was also inspired by Stab work \cite{TUD-CS-2014-0882}.
+\
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{fig/subclause.png}
+    \caption[Short caption]{Clause Ratio Feature}
+    \label{fig:subclause}
+\end{figure}
+\
+
+\subsection{Sentiment Analysis Feature}
+Sentiment Analysis, or Opinion Mining refer to NLP techniques of detecting subjective information out of textual data. The research work related to this work really exploded over the past decade, especially when social media emerged and the availability of high subjective and sentimental data. In this work, we use the standard state-of-the-art tool for researchers which is \emph{GPL Stanford Deep Learning for Sentiment Analysis}\footnote{http://nlp.stanford.edu/sentiment/code.html}. 
+
+This tool assign to each sentence 5 percentage coefficients labelled \texttt{Very Negative}, \texttt{Negative}, \texttt{Neutral}, \texttt{Positive} and \texttt{Very Positive}. Those coefficients are calculated by recursive deep models that are detailed in Socher and Perelygin article \cite{Socher_recursivedeep}.
+
+\
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{fig/sentimenttree.png}
+    \includegraphics[width=0.4\textwidth]{fig/sentimentcoeff.png}
+    \caption[Short caption]{ Recursive Neural Tensor Network and the resulting sentiment coefficients}
+    \label{fig:subclause}
+\end{figure}
+
+Stanford's Sentiment Analysis tool was not available in DKPro, and we had to partially\footnote{The two software don't work on the same annotations} integrate it in the pipeline.
+
+\subsubsection{Sentiment Coefficients}
+We call \emph{sentiment coefficients} the 5 output coefficients returned by Stanford's Sentiment Analysis tool. Again, those coefficients are calculated on the sentences and thus, we have to perform a statistical analysis on the sentences. 
+\\
+We denote the 5 sentiment coefficients with symbols as follows: \texttt{(-- - 0 + ++)} and $f_{c}$ is the function that given one sentiment c returns the corresponding coefficients in the sentence. Thus, we compute the minimum, the maximum, the average and the standard deviation of those 5 coefficients which gives us 20 metrics to evaluate the sentiment distribution in our text:
+\begin{equation*}
+\forall c \in \texttt{\{--, -, 0, +, ++\}}, \: \:
+\begin{cases}
+min_c = \underset{s \in text}{min} \: \: f_c(s) \\
+max_c = \underset{s \in text}{max} \: \: f_c(s) \\
+\mu_c = \frac{1}{|s|} \; \displaystyle\sum_{s \in text} f_c(s) \\
+\sigma_c = \sqrt{\frac{\displaystyle\sum_{s \in text} (f_c(s) - \mu_c)^2}{|s|}}
+\end{cases}
+\end{equation*} 
+
+\subsubsection{Sentiment Fluctuation}
+The sentiments may vary slightly or significantly from a sentence to another. We can then define the \emph{sentiment rules} which model the transition from one state to another. Since we have 5 type of coefficients, it results in 25 rules (ex: -- \rightarrow +, 0 \rightarrow ++, - \rightarrow -). 
+
+In comparison with token n-grams and dependency rules, 25-dimensional binary vectors are built and represent the absence and the presence of a rule.
+
+??SHOW an example
+
+\subsection{LDA}
+??BETTER title and explain
 
 
 

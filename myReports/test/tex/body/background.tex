@@ -2,7 +2,53 @@
 The aim of this work is to create a model that predicts if an article comment or a forum post can be classified as "persuasive" or "non-persuasive". We'll first give general definitions about persuasion and argumentation, and how the corpus was annotated. Then, the tool that was used to perform the classfication, DKPro Text Classification Framework, will be introduced and its functionnalities will be explained. Finally we'll discuss about the algorithm used and the metrics to evaluate our model.
 \section{Argumentation}  %% To be changed while writting it
 \subsection{General Definitions}
+To better understand the vocabulary that will be used in this report, we give four important definitions:
+\\
+\\
+\textbf{Debate} The process of inquiry and advocacy; the seeking of a reasoned judgement on a proposition. (\cite{freeley2000argumentation}, p. 2)
+\\
+\\
+\textbf{Controversy} Controversy is an essential prerequisite of debate. Where there is no clash of ideas,
+proposals, interests, or expressed positions on issues, there is no debate. (\cite{freeley2000argumentation}, p. 43)
+\\
+\\
+\textbf{Argumentation} Reason giving in communicative situations by people whose purpose is the justification of acts, beliefs, attitudes, and values. (\cite{freeley2000argumentation}, p. 2)
+\\
+\\
+\textbf{Persuasion} Communication intended to influence the acts, beliefs, attitudes, and values of others. (\cite{freeley2000argumentation}, p. 2)
+
 \subsection{Persuasion}
+Persuasion and argumentation are the essence of any debate about controversies. Whether on-line or face-to-face, people try to convince others about their opinions, values, and attitude towards that particular controversy using various kinds of argumentation.
+
+Let’s assume a made-up example from a discussion forum about single-sex education, a quite
+controversial topic. In one post, the author (i.e. \emph{Jack} ) writes:
+\\
+\\
+\fbox{\begin{minipage}{1\textwidth}
+\textbf{\#ex1 (forumpost, single-sex education)} I'm completely against single-sex education. This does not prepare students for real life where men and women live together!! –Jack
+\end{minipage}}
+\\
+
+Jack’s intention here is not only to share his opinion but also to persuade other users in the
+debate (and potentially all readers on the Internet). We can thus treat his message as persuasive
+(also cf. definition above). The means he uses to persuade is argumentation, because he also gives
+some reasons to support his stance towards the discussed topic.
+
+However, the way people argue is not always as clear as in the example above. Suppose we have the following text from an actual debate about home-schooling:
+\\
+\fbox{\begin{minipage}{1\textwidth}
+\textbf{\#203 (artcomment, homeschooling)} Teaching is not just subject knowledge (although
+I’d be the last to downplay that). It is also meeting other people from all walks of life, dealing
+with new situations, finding friends etc. I’ve always felt sorry for home-schooled kids. They
+are being denied their childhood and adolescence by parents who want to exercise total power
+of them, deny them the pains and pleasures that social experience brings. –JuniusPublicus
+\end{minipage}}
+\\
+
+The author does not say explicitly that he/she is against home-schooling. However, he/she
+provides some examples (necessity of social interaction, total power of parents) and expresses
+feelings (sorry for home-schooled kids), so we can infer out the \emph{implicit} message. This example is
+thus also \emph{persuasive} and \emph{argumentative}.
 \subsection{Persuasion 2.0} %euh ?
 
 \section{NLP and the DKPro Framework}
