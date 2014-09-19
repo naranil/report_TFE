@@ -18,6 +18,12 @@ Pranav Anand, Marilyn Walker, Rob Abbott, Jean~E. Fox~Tree, Robeson Bowmani,
   to Subjectivity and Sentiment Analysis (WASSA 2.011)}, pages 1--9, Portland,
   Oregon, June 2011. Association for Computational Linguistics.
 
+\bibitem{Boser:1992}
+Bernhard~E. Boser, Isabelle~M. Guyon, and Vladimir~N. Vapnik.
+\newblock A training algorithm for optimal margin classifiers.
+\newblock In {\em Proceedings of the Fifth Annual Workshop on Computational
+  Learning Theory}, COLT '92, pages 144--152, New York, NY, USA, 1992. ACM.
+
 \bibitem{TUD-CS-2014-0864}
 Richard~Eckart de~Castilho and Iryna Gurevych.
 \newblock A broad-coverage collection of portable nlp components for building

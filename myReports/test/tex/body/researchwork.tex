@@ -503,7 +503,7 @@ This tool assign to each sentence 5 percentage coefficients labelled \texttt{Ver
     \includegraphics[width=0.8\textwidth]{fig/sentimenttree.png}
     \includegraphics[width=0.4\textwidth]{fig/sentimentcoeff.png}
     \caption[Short caption]{ Recursive Neural Tensor Network and the resulting sentiment coefficients}
-    \label{fig:subclause}
+    \label{fig:sentcoeff}
 \end{figure}
 
 Stanford's Sentiment Analysis tool was not available in DKPro, and we had to partially\footnote{The two software don't work on the same annotations} integrate it in the pipeline.
@@ -532,10 +532,55 @@ In comparison with token n-grams and dependency rules, 25-dimensional binary vec
 \subsection{LDA}
 ??BETTER title and explain
 
+\section{The Classifier and Performances}
+In Data Mining, once we have defined all the features that describe our data, we need to train a model on those features and evaluate the performances of the model. Even if the results can vary a lot from one classifier to another, in this study we're more interested in how perform the feature rather than how perform a certain classifier. Thus, we'll use a common state-of-the-art classifier called \emph{Support Vector Machine} or \emph{SVM}.
 
+\subsection{SVM Classifier}
+In the field of machine learning, SVMs are supervised learning models that perform classification (also regression, but it's not the purpose of our study) by finding the hyperplane that maximizes the margin between the two classes. The vectors that define the hyperplane are called \emph{support vectors} \cite{Boser:1992}.
 
+The main advantage of SVM is that, as we'll see later, it can separate non linearly separable data thank to its \emph{kernel} by adding dimensions and transform the data into linearly separable data, as it can be seen on the following figures:
 
+\
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{fig/svm-nonlin.png}
+    \caption[Short caption]{In this 2D representation, the blue and red classes are not linearly separable}
+    \label{fig:svm-nonlin}
+\end{figure}
 
+\
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{fig/svm-lin.png}
+    \caption[Short caption]{By transforming the data and adding one dimension, the classes are linearly separable}
+    \label{fig:svm-lin}
+\end{figure}
 
+We shortly outline the different steps of the SVM algorithm:
+\\
+\\
+\textbf{Algorithm}
+\begin{itemize}
+  \item Define an optimal hyperplane: maximize margin
+  \item Extend the above definition for non-linearly separable problems: have a penalty term for misclassifications.
+  \item Map data to high dimensional space where it is easier to classify with linear decision surfaces: reformulate problem so that data is mapped implicitly to this space.
+\end{itemize} 
+\\
+To specify in more details, here is how the optimal hyperplane and the margin are defined:
 
+\
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{fig/hypopt1.png}
+    \includegraphics[width=0.8\textwidth]{fig/hypopt2.png}
+    \caption[Short caption]{Margin and Hyperplane Optimization for SVM}
+    \label{fig:hypopt}
+\end{figure}
 
+The geometric parameters \emph{b} and \emph{w} are found using \emph{Quadratic Programming}\footnote{Quadratic programming (QP) is a special type of mathematical optimization problem. It is the problem of optimizing (minimizing or maximizing) a quadratic function of several variables subject to linear constraints on these variables.} on this following function:
+\begin{equation*}
+min \; \frac{1}{2} ||w||^2 
+\end{equation*}
+\begin{equation*}
+s.t. y_i \; (w \; x_i + b) \geq 1, \forall x_i
+\end{equation*}

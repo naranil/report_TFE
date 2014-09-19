@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.8.26)  17 SEP 2014 20:59
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.8.26)  19 SEP 2014 18:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -365,14 +365,7 @@ Package: glossary-tree 2012/09/21 v3.03 (NLCT)
 
 Package glossaries Info: Writing glossary file myThesis.glo on input line 20.
 
-(./myThesis.aux
-
-LaTeX Warning: Label `fig:subclause' multiply defined.
-
-
-LaTeX Warning: Label `fig:subclause@cref' multiply defined.
-
-)
+(./myThesis.aux)
 \openout1 = `myThesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
@@ -535,42 +528,55 @@ Underfull \hbox (badness 10000) in paragraph at lines 37--47
 
  []
 
-<fig/uima.png, id=24, 700.11563pt x 420.82219pt>
+<fig/spam.png, id=24, 602.25pt x 230.8625pt>
+File: fig/spam.png Graphic file (type png)
+ <use fig/spam.png>
+Package pdftex.def Info: fig/spam.png used on input line 57.
+(pdftex.def)             Requested size: 452.9679pt x 173.64313pt.
+ [3]
+<fig/overview.png, id=33, 659.46375pt x 307.1475pt>
+File: fig/overview.png Graphic file (type png)
+ <use fig/overview.png>
+Package pdftex.def Info: fig/overview.png used on input line 66.
+(pdftex.def)             Requested size: 452.9679pt x 210.9759pt.
+
+[4 <./fig/spam.png> <./fig/overview.png>]
+<fig/uima.png, id=40, 700.11563pt x 420.82219pt>
 File: fig/uima.png Graphic file (type png)
  <use fig/uima.png>
-Package pdftex.def Info: fig/uima.png used on input line 64.
+Package pdftex.def Info: fig/uima.png used on input line 82.
 (pdftex.def)             Requested size: 452.9679pt x 272.27261pt.
- [3]
-<fig/dkpro-pipeline.png, id=30, 1017.8025pt x 569.12625pt>
+
+<fig/dkpro-pipeline.png, id=41, 1017.8025pt x 569.12625pt>
 File: fig/dkpro-pipeline.png Graphic file (type png)
 
 <use fig/dkpro-pipeline.png>
-Package pdftex.def Info: fig/dkpro-pipeline.png used on input line 80.
+Package pdftex.def Info: fig/dkpro-pipeline.png used on input line 98.
 (pdftex.def)             Requested size: 452.9679pt x 253.29077pt.
- [4 <./fig/uima.png (PNG copy)>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 87.
+ [5 <./fig/uima.png (PNG copy)>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 105.
+
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 87.
-
-Overfull \hbox (2.65868pt too wide) in paragraph at lines 100--102
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 105.
+ [6 <./fig/dkpro-pipeline.png>]
+Overfull \hbox (2.65868pt too wide) in paragraph at lines 118--120
 []\OT1/cmr/m/n/12 Concerning the al-go-rithms used, TC re-lies on Weka[] (\OT1/
 cmr/m/it/12 Waikato En-vi-ron-ment for Knowl-
  []
 
-[5 <./fig/dkpro-pipeline.png>]
-<fig/TC-modes.png, id=41, 1050.92625pt x 323.2075pt>
+<fig/TC-modes.png, id=49, 1050.92625pt x 323.2075pt>
 File: fig/TC-modes.png Graphic file (type png)
  <use fig/TC-modes.png>
-Package pdftex.def Info: fig/TC-modes.png used on input line 107.
+Package pdftex.def Info: fig/TC-modes.png used on input line 125.
 (pdftex.def)             Requested size: 452.9679pt x 139.30693pt.
 
-[6 <./fig/TC-modes.png>]) [7] (./tex/body/researchwork.tex
+[7 <./fig/TC-modes.png>]) [8] (./tex/body/researchwork.tex
 Chapter 3.
-[8
+[9
 
 
 ]
@@ -579,7 +585,7 @@ Overfull \hbox (9.25714pt too wide) in paragraph at lines 53--57
  background
  []
 
-[9]
+[10]
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
@@ -739,12 +745,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 59--139
 
  []
 
-[10] [11] [12]
+[11] [12] [13]
 Overfull \hbox (297.37265pt too wide) in paragraph at lines 184--196
 [][] 
  []
 
-[13]
+[14]
 Underfull \hbox (badness 10000) in paragraph at lines 216--218
 
  []
@@ -754,7 +760,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 219--223
 
  []
 
-<fig/ngramfeature.png, id=69, 736.7525pt x 243.91125pt>
+<fig/ngramfeature.png, id=77, 736.7525pt x 243.91125pt>
 File: fig/ngramfeature.png Graphic file (type png)
 
 <use fig/ngramfeature.png>
@@ -771,7 +777,7 @@ Overfull \hbox (69.29091pt too wide) in paragraph at lines 243--245
  three pa-ram-e-ters: \OT1/cmr/m/it/12 PARAM[]NGRAM[]MIN[]N
  []
 
-[14 <./fig/ngramfeature.png>]
+[15 <./fig/ngramfeature.png>]
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
@@ -793,10 +799,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 264--277
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
-[15]
+[16]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 308.
- <fig/multiplepunc.png, id=77, 385.44pt x 178.6675pt>
+ <fig/multiplepunc.png, id=85, 385.44pt x 178.6675pt>
 File: fig/multiplepunc.png Graphic file (type png)
 
 <use fig/multiplepunc.png>
@@ -814,7 +820,7 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 321--329
 [] 
  []
 
-[16 <./fig/multiplepunc.png>]
+[17 <./fig/multiplepunc.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 331--337
 
  []
@@ -830,23 +836,23 @@ Overfull \hbox (63.43497pt too wide) in paragraph at lines 342--342
 tc/features/syntax/POSRatioFeatureExtractor.java| 
  []
 
-<fig/11pos.png, id=81, 454.69875pt x 208.78pt>
+<fig/11pos.png, id=89, 454.69875pt x 208.78pt>
 File: fig/11pos.png Graphic file (type png)
  <use fig/11pos.png>
 Package pdftex.def Info: fig/11pos.png used on input line 371.
 (pdftex.def)             Requested size: 271.7835pt x 124.79427pt.
- [17]
+ [18]
 Underfull \hbox (badness 10000) in paragraph at lines 405--409
 
  []
 
-[18 <./fig/11pos.png>] <fig/deptree.png, id=88, 480.79625pt x 295.1025pt>
+[19 <./fig/11pos.png>] <fig/deptree.png, id=96, 480.79625pt x 295.1025pt>
 File: fig/deptree.png Graphic file (type png)
 
 <use fig/deptree.png>
 Package pdftex.def Info: fig/deptree.png used on input line 414.
 (pdftex.def)             Requested size: 317.07614pt x 194.61964pt.
- <fig/deptreepath.png, id=90, 480.79625pt x 295.1025pt>
+ <fig/deptreepath.png, id=97, 480.79625pt x 295.1025pt>
 File: fig/deptreepath.png Graphic file (type png)
 
 <use fig/deptreepath.png>
@@ -857,32 +863,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 427--442
 
  []
 
-[19 <./fig/deptree.png> <./fig/deptreepath.png>]
+[20 <./fig/deptree.png> <./fig/deptreepath.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 446--452
 
  []
 
-[20] <fig/subclause.png, id=102, 503.8825pt x 90.3375pt>
+[21] <fig/subclause.png, id=110, 503.8825pt x 90.3375pt>
 File: fig/subclause.png Graphic file (type png)
 
 <use fig/subclause.png>
 Package pdftex.def Info: fig/subclause.png used on input line 489.
 (pdftex.def)             Requested size: 317.07614pt x 56.84674pt.
 
-<fig/sentimenttree.png, id=103, 872.25874pt x 521.95pt>
+<fig/sentimenttree.png, id=111, 872.25874pt x 521.95pt>
 File: fig/sentimenttree.png Graphic file (type png)
 
 <use fig/sentimenttree.png>
 Package pdftex.def Info: fig/sentimenttree.png used on input line 503.
 (pdftex.def)             Requested size: 362.37569pt x 216.83617pt.
 
-<fig/sentimentcoeff.png, id=104, 199.74625pt x 206.7725pt>
+<fig/sentimentcoeff.png, id=112, 199.74625pt x 206.7725pt>
 File: fig/sentimentcoeff.png Graphic file (type png)
 
 <use fig/sentimentcoeff.png>
 Package pdftex.def Info: fig/sentimentcoeff.png used on input line 504.
 (pdftex.def)             Requested size: 181.18439pt x 187.56694pt.
- [21 <./fig/subclause.png>]
+ [22 <./fig/subclause.png>]
 LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 516
 .
 
@@ -891,7 +897,7 @@ File: omscmtt.fd
 )
 LaTeX Font Info:    Font shape `OMS/cmtt/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 516.
- [22 <./fig/sentimenttree.png> <./fig/sentimentcoeff.png (PNG copy)>]
+ [23 <./fig/sentimenttree.png> <./fig/sentimentcoeff.png (PNG copy)>]
 ! Missing $ inserted.
 <inserted text> 
                 $
@@ -908,66 +914,106 @@ l.527
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-) [23] (./tex/material/appendix.tex
+<fig/svm-nonlin.png, id=119, 486.81876pt x 365.365pt>
+File: fig/svm-nonlin.png Graphic file (type png)
+ <use fig/svm-nonlin.png>
+Package pdftex.def Info: fig/svm-nonlin.png used on input line 546.
+(pdftex.def)             Requested size: 362.37569pt x 271.9659pt.
+
+[24] <fig/svm-lin.png, id=123, 486.81876pt x 365.365pt>
+File: fig/svm-lin.png Graphic file (type png)
+ <use fig/svm-lin.png>
+Package pdftex.def Info: fig/svm-lin.png used on input line 554.
+(pdftex.def)             Requested size: 362.37569pt x 271.9659pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 559--564
+
+ []
+
+[25 <./fig/svm-nonlin.png> <./fig/svm-lin.png>]
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.569 T
+       o specify in more details, here is how the optimal hyperplane and the...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+<fig/hypopt1.png, id=129, 518.93875pt x 291.0875pt>
+File: fig/hypopt1.png Graphic file (type png)
+ <use fig/hypopt1.png>
+Package pdftex.def Info: fig/hypopt1.png used on input line 574.
+(pdftex.def)             Requested size: 362.37569pt x 203.27571pt.
+
+<fig/hypopt2.png, id=130, 514.92375pt x 272.01625pt>
+File: fig/hypopt2.png Graphic file (type png)
+ <use fig/hypopt2.png>
+Package pdftex.def Info: fig/hypopt2.png used on input line 575.
+(pdftex.def)             Requested size: 362.37569pt x 191.43527pt.
+
+[26 <./fig/hypopt1.png> <./fig/hypopt2.png>]) [27] (./tex/material/appendix.tex
 Appendix A.
-<fig/dkpro-overview.png, id=115, 978.65625pt x 533.995pt>
+<fig/dkpro-overview.png, id=138, 978.65625pt x 533.995pt>
 File: fig/dkpro-overview.png Graphic file (type png)
 
 <use fig/dkpro-overview.png>
 Package pdftex.def Info: fig/dkpro-overview.png used on input line 4.
 (pdftex.def)             Requested size: 452.9679pt x 247.16437pt.
- [24
+ [28
 
 
  <./fig/dkpro-overview.png>]
 Appendix B.
-[25
+[29
 
 ]
 Appendix C.
-[26
+[30
 
 ]
 Appendix D.
-[27
+[31
 
 ]
 Appendix E.
-) (./myThesis.gls [28
+) (./myThesis.gls [32
 
-]) (./myThesis.bbl [29
+]) (./myThesis.bbl [33
 
-] [30
+] [34
 
-]) [31] (./myThesis.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+]) [35] (./myThesis.aux) ) 
 Here is how much of TeX's memory you used:
- 8537 strings out of 493307
- 129995 string characters out of 6139905
- 353924 words of memory out of 5000000
- 11791 multiletter control sequences out of 15000+600000
+ 8580 strings out of 493307
+ 130754 string characters out of 6139905
+ 354110 words of memory out of 5000000
+ 11828 multiletter control sequences out of 15000+600000
  11187 words of font info for 41 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 46i,12n,41p,1443b,288s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmss17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-y8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on myThesis.pdf (35 pages, 704760 bytes).
+ 46i,12n,41p,1443b,328s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
+i12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmtt12.pfb>
+Output written on myThesis.pdf (39 pages, 847128 bytes).
 PDF statistics:
- 184 PDF objects out of 1000 (max. 8388607)
- 118 compressed objects within 2 object streams
+ 209 PDF objects out of 1000 (max. 8388607)
+ 129 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 61 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 91 words of extra memory for PDF output out of 10000 (max. 10000000)
 
