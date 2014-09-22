@@ -18,6 +18,11 @@ Pranav Anand, Marilyn Walker, Rob Abbott, Jean~E. Fox~Tree, Robeson Bowmani,
   to Subjectivity and Sentiment Analysis (WASSA 2.011)}, pages 1--9, Portland,
   Oregon, June 2011. Association for Computational Linguistics.
 
+\bibitem{Blei:2003:LDA:944919.944937}
+David~M. Blei, Andrew~Y. Ng, and Michael~I. Jordan.
+\newblock Latent dirichlet allocation.
+\newblock {\em J. Mach. Learn. Res.}, 3:993--1022, March 2003.
+
 \bibitem{Boser:1992}
 Bernhard~E. Boser, Isabelle~M. Guyon, and Vladimir~N. Vapnik.
 \newblock A training algorithm for optimal margin classifiers.
@@ -61,9 +66,20 @@ Kazi~Saidul Hasan and Vincent Ng.
 \newblock In {\em Proceedings of the Sixth International Joint Conference on
   Natural Language Processing}, pages 1348--1356, 2013.
 
+\bibitem{NLE:9163968}
+ZIHENG LIN, HWEE~TOU NG, and MIN-YEN KAN.
+\newblock A pdtb-styled end-to-end discourse parser.
+\newblock {\em Natural Language Engineering}, 20:151--184, 4 2014.
+
 \bibitem{Nivre_aquick}
 Joakim Nivre and Johan Hall.
 \newblock A quick guide to maltparser optimization.
+
+\bibitem{Platt:1999}
+John~C. Platt.
+\newblock Advances in kernel methods.
+\newblock chapter Fast Training of Support Vector Machines Using Sequential
+  Minimal Optimization, pages 185--208. MIT Press, Cambridge, MA, USA, 1999.
 
 \bibitem{Socher_recursivedeep}
 Richard Socher, Alex Perelygin, Jean~Y. Wu, Jason Chuang, Christopher~D.

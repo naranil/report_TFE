@@ -22,13 +22,38 @@
 \providecommand*\glsXpageXhypersc[2]{\setentrycounter[#1]{page}\hypersc{#2}}
 \providecommand*\glsXpageXhyperemph[2]{\setentrycounter[#1]{page}\hyperemph{#2}}
 \begin{theglossary}\glossaryheader
+\glsgroupheading{A}\relax\glsresetentrylist
+\glossaryentryfield{argumentation}{\glsnamefont{argumentation}}{Reason giving in communicative situations by people whose purpose is the justification of acts, beliefs, attitudes, and values}{\relax }{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{2}}}\glsgroupskip
 \glsgroupheading{G}\relax\glsresetentrylist
 \glossaryentryfield{gold data}{\glsnamefont{gold data}}{Bla bla}{\relax }{\glossaryentrynumbers{\relax 
-\glsXpageXglsnumberformat{}{11}}}\glsgroupskip
-\glsgroupheading{S}\relax\glsresetentrylist
-\glossaryentryfield{supervised learning}{\glsnamefont{supervised learning}}{Supervised learning is the machine learning task of inferring a function from labelled training data}{\relax }{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{14}}}\glsgroupskip
+\glsgroupheading{I}\relax\glsresetentrylist
+\glossaryentryfield{irony}{\glsnamefont{irony}}{The use of words to express something different from and often opposite to their literal meaning}{\relax }{\glossaryentrynumbers{\relax 
 \glsXpageXglsnumberformat{}{4}}}\glsgroupskip
+\glsgroupheading{L}\relax\glsresetentrylist
+\glossaryentryfield{lemma}{\glsnamefont{lemma}}{In morphology and lexicography, a lemma (plural lemmas or lemmata) is the canonical form, dictionary form, or citation form of a set of words (headword). In English, for example, run, runs, ran and running are forms of the same lexeme, with run as the lemma}{\relax }{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{16}}}\glsgroupskip
+\glsgroupheading{M}\relax\glsresetentrylist
+\glossaryentryfield{machine learning}{\glsnamefont{machine learning}}{Machine learning is a subfield of computer science and artificial intelligence that deals with the construction and study of systems that can learn from data, rather than follow only explicitly programmed instructions}{\relax }{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{4}}}\glsgroupskip
+\glsgroupheading{P}\relax\glsresetentrylist
+\glossaryentryfield{parts-of-speech}{\glsnamefont{parts-of-speech}}{A term in traditional grammar for the eight categories into which words are classified according to their functions in sentences: noun, pronoun, verb, adjective, adverb, preposition, conjunction, interjection}{\relax }{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{6}}}\relax\glsresetentrylist
+\glossaryentryfield{persuasion}{\glsnamefont{persuasion}}{Communication intended to influence the acts, beliefs, attitudes, and values of others}{\relax }{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{2}}}\glsgroupskip
+\glsgroupheading{S}\relax\glsresetentrylist
+\glossaryentryfield{sarcasm}{\glsnamefont{sarcasm}}{A cutting, often ironic remark intended to wound}{\relax }{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{4}}}\relax\glsresetentrylist
+\glossaryentryfield{single-label}{\glsnamefont{single-label classification}}{Each instance is assigned to one and only one class}{\relax }{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{7}}}\relax\glsresetentrylist
+\glossaryentryfield{stemma}{\glsnamefont{stemma}}{?}{\relax }{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{16}}}\relax\glsresetentrylist
+\glossaryentryfield{supervised learning}{\glsnamefont{supervised learning}}{Supervised learning is the machine learning task of inferring a function from labelled training data}{\relax }{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{7}}}\glsgroupskip
 \glsgroupheading{T}\relax\glsresetentrylist
-\glossaryentryfield{token}{\glsnamefont{token}}{Tokenization is the process of breaking a stream of text up into words, phrases, symbols, or other meaningful elements called tokens.}{\relax }{\glossaryentrynumbers{\relax 
-\glsXpageXglsnumberformat{}{12}}}%
+\glossaryentryfield{token}{\glsnamefont{token}}{Tokenization is the process of breaking a stream of text up into words, phrases, symbols, or other meaningful elements called tokens}{\relax }{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{16}}}\relax\glsresetentrylist
+\glossaryentryfield{tokenization}{\glsnamefont{tokenization}}{Tokenization is the process of breaking a stream of text up into words, phrases, symbols, or other meaningful elements called tokens.}{\relax }{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{6}}}%
 \end{theglossary}\glossarypostamble

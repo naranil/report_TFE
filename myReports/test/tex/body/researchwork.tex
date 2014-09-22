@@ -1,5 +1,5 @@
 \chapter{The Research Work} 
-In this part, we'll see how the theoretical knowledge in Argumentation Theory and NLP presented were applied to a concrete case study. We'll first see the types of textual data we have, how they were annotated for the supervised learning task and then how features were engineered to perform an automatic classification.
+In this part, we'll see how the theoretical knowledge in Argumentation Theory and NLP presented previously were applied to a concrete case study. We'll first see the types of textual data we have, how they were annotated for the supervised learning task and then how features were engineered to perform an automatic classification. We'll also have a brief look at the classifier algorithm we're using to perform our classification. 
 \section{Text Corpus}
 The data set used for this study was originally composed of 990 text files. They contain forum posts or articles about 6 different domains related to education, that provoke debate in the American society:
 \begin{itemize}
@@ -12,13 +12,12 @@ The data set used for this study was originally composed of 990 text files. They
 \end{itemize} 
 
 The meta-information for each text (id, type of post, domain) is given my the name of the file in itself such as follow:
-
+\\
+\\
 \centerline{\texttt{174\_P2\_artcomment\_homeschooling.txt}}
-
-$\frac{ \textrm{Text}}{1} \frac{\textrm{Text}}{2} \frac{\textrm{Text}}{3}$
-??FIND A WAY TO DO IT THIS WAY 
-
-Later in the internship, I started to use \textit{XMI} files\footnote{The XML Metadata Interchange (XMI) is an Object Management Group (OMG) standard for exchanging metadata information via Extensible Markup Language (XML).} that contain more information about the post or comment in itself such as the author, the date, ect... ??Annexe with how xmi looks like ?
+\\
+\\
+Later in the internship, I started to use \textit{XMI} files\footnote{The XML Metadata Interchange (XMI) is an Object Management Group (OMG) standard for exchanging metadata information via Extensible Markup Language (XML).} that contain more information about the post or comment in itself such as the author, the annotator comments, the conflicts, ect... (\cref{sec:xmi})
 
 \subsection{Manual Annotation}
 As mentioned before, the classification we want to perform is a supervised learning problem since it wants to imitate the human decision on judging if a post is persuasive or not. An annotation guideline was written by Ivan Habernal \cite{ivanguideline} in order for the annotators to understand the task. In this section, we'll discuss about the general ideas of this guideline.
@@ -142,7 +141,7 @@ Three annotators were charged of labelling the data as P1 and P2 (if P2, he was 
 
 Once the annotations are performed, a discussion takes place with the annotators in order to solve issues and conflict annotations. If all annotators agree on the class (P1 or P2) of a text, the class will be set as the \emph{gold label} of this text. But if after the discussion, there's still a conflict, the text will be labelled according to majority. 
 
-To evaluate how well were the annotations, we compare statistical metrics that are described in~\cref{sec:stanabin} such as Recall, Precision, Accuracy and Macro $F_{1}$ measure. The comparison will be performed on 4 scenario: 
+To evaluate how well were the annotations, we compare statistical metrics that are described in~\cref{sec:bincla} such as Recall, Precision, Accuracy and Macro $F_{1}$ measure. The comparison will be performed on 4 scenario: 
 \begin{itemize}
   \item \textbf{$A_1$ vs $A_2$}
   \item \textbf{$A_1$ vs $A_3$}
@@ -176,14 +175,15 @@ A3	&811	&0.893	&0.893	&0.929	&0.855	&0.890	&0.861	&0.932	&0.895\\
 \end{tabular}
 \caption{\label{tab:human-performance-annotation-study-1} Human performance on \emph{gold data persuasive}.}
 \end{table}
-??help: Find a way to say the results are good that's why we want to do a text classification.
+The Macro F-measure (here called $F_1$) and the accuracy are high enough to consider an automatic classification based on machine learning.
 
 \subsection{Corpus Statistics}
 Now that we have the \emph{gold labels} for the texts, we can sum the relevant information in a table: 
 \begin{table}[h]
+\centering
 \begin{tabular}{ll|l|l|l|l|l|l|l|}
 \cline{3-9}
- &  & redshirting & prayer-in-schools & homeschooling & single-sex-education & mainstreaming & public-private-schools & Total \\ \hline
+ &  & RS & PIS & HS & SSE & MS & PPS & Total \\ \hline
 \multicolumn{1}{|l|}{} & artcomment & 24 & 60 & 64 & 17 & 1 & 278 & 444 \\ \cline{2-9} 
 \multicolumn{1}{|l|}{} & forumpost & 14 & 17 & 22 & 9 & 9 & 9 & 80 \\ \cline{2-9} 
 \multicolumn{1}{|l|}{\multirow{-3}{*}{P1}} & \cellcolor[HTML]{C0C0C0}all & \cellcolor[HTML]{C0C0C0}38 & \cellcolor[HTML]{C0C0C0}77 & \cellcolor[HTML]{C0C0C0}86 & \cellcolor[HTML]{C0C0C0}26 & \cellcolor[HTML]{C0C0C0}10 & \cellcolor[HTML]{C0C0C0}287 & \cellcolor[HTML]{C0C0C0}524 \\ \hline
@@ -194,10 +194,37 @@ Now that we have the \emph{gold labels} for the texts, we can sum the relevant i
 \multicolumn{1}{|l|}{\multirow{-2}{*}{P1  + P2}} & Percentage & 6.9 & 14.4 & 22.6 & 5.1 & 2.9 & 48.1 & 100 \\ \hline
 \end{tabular}
 \end{table}
-??Find a ways for the color and the size
+\\
+Abbreviations:
+
+\texttt{RS = redshirting}
+
+\texttt{PIS = prayer in school}
+
+\texttt{HS = homeschooling}
+
+\texttt{SSE = single sex education}
+
+\texttt{MS = mainstreaming}
+
+\texttt{PPS = public private schools}
 
 \subsection{Conflict Annotations}
-??Mention the conflict annotations + some statistics 
+\label{sec:conflictannotations}
+When an annotator doesn't agree with the others about the class of a certain text, a discussion takes place between the three annotators to try to conclude about the class. If after the discussion, the annotator still doesn't agree with his colleagues, the \emph{gold class}\footnote{The class given to a text after the annotation process} is set as the majority class among the annotators but in the metadata of the text, it will be specified that the text was conflicting. Knowing if the text was conflicting will help us to perform the error analysis in the last parts of this report.
+\\
+\\
+Here are some statistics about conflict annotations:
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+      & Non Conflict & Conflict \\ \hline
+P1    & 393          & 131      \\ \hline
+P2    & 346          & 120      \\ \hline
+Total & 739          & 251      \\ \hline
+\end{tabular}
+\end{table}
 \section{Feature Engineering}
 Now that we have all our data annotated, we have to extract relevant information from it in order to perform the classification. The problem of identifying persuasion in a text is a relatively new question in NLP and we don't have any straightforward methodology to find relevant features. Thus, we'll implement the NLP standard features that are used widely in other sub-fields of language processing and then we'll use the state-of-the-art features discovered in Argumentation Mining. A lot of modules of DKPro helped us to create our features but we had to extend somehow the software for certain functionalities that were not in DKPro Core and TC (for example the \emph{Sentiment Analysis}).
 
@@ -205,9 +232,9 @@ Now that we have all our data annotated, we have to extract relevant information
 The adjective lexical refers to the words and the vocabulary of a corpus. This part will deal with the extraction of meaningful features related to words, sentences, \glspl{token}\footnote{Tokenization is the process of breaking a stream of text up into words, phrases, symbols, or other meaningful elements called tokens.}, punctuations, ect...
 
 \subsubsection{Tokens N-Grams}
-In NLP, an n-gram is a contiguous sequence of n (with n integer) items from a given sequence of text or speech. As a result of, tokens n-grams are sequences of tokens from a text (\textit{Note: } For more information about units in linguistics such as words, tokens, \gls{lemma} and \gls{stemma}, have a look at~\cref{sec:linmorph}). The study of n-grams distribution in a corpus is an ancient technique \cite{tcjullmann77} in language processing and it's usage is common in the field.
+In NLP, an n-gram is a contiguous sequence of n (with n integer) items from a given sequence of text or speech. As a result of, tokens n-grams are sequences of tokens from a text (\textit{Note: } For more information about units in linguistics such as words, tokens, \gls{lemma} and stemma, have a look at the glossary). The study of n-grams distribution in a corpus is an ancient technique \cite{tcjullmann77} in language processing and it's usage is common in the field.
 
-In this study, we use a DKPro available feature that extracts the 10.000 most common 1,2 and 3-grams in all the corpus and returns for each text a 10000-dimensional binary vector. Each vector element corresponds to one of the 10000 extracted n-gram, its value is 1 the text contains the n-grams, 0 otherwise.
+In this study, we use a DKPro available feature that extracts the 10.000 most common 1,2 and 3-grams in all the corpus and returns for each text a 10000-dimensional binary vector. Each vector element corresponds to one of the 10000 extracted n-gram, its value is 1 if the text contains the n-gram, 0 otherwise.
 \\
 To better understand this feature, let's take a simple example. We consider that the set of 1-grams contains 10 elements such as follow: 
 
@@ -238,10 +265,10 @@ As mentioned before, this feature is already implemented in DKPro and it's easy 
     \caption[Short caption]{NGram Feature in DKPro Java code}
     \label{fig:ngramfeature}
 \end{figure}
-\
-
-As displayed on \ref{fig:ngramfeature}, the n-gram feature extractor takes three parameters: \emph{PARAM\_NGRAM\_MIN\_N} for the minimal value of n, \emph{PARAM\_NGRAM\_MAX\_N} for the maximal value of n and \emph{PARAM\_NGRAM\_USE\_TOP\_K} which is the number of common n-grams retained.
-Since we want the 10.000 most common 1,2 and 3-grams, the parameters are set such as follow:
+\\
+\\
+As displayed on \ref{fig:ngramfeature}, the n-gram feature extractor takes three parameters: \texttt{PARAM\_NGRAM\_MIN\_N} for the minimal value of n, \texttt{PARAM\_NGRAM\_MAX\_N} for the maximal value of n and \texttt{PARAM\_NGRAM\_USE\_TOP\_K} which is the number of common n-grams retained.
+Since we want the 10000 most common 1,2 and 3-grams, the parameters are set such as follow:
 
 \begin{itemize}[label={}]
   \item \texttt{PARAM\_NGRAM\_MIN\_N = 1}
@@ -249,12 +276,12 @@ Since we want the 10.000 most common 1,2 and 3-grams, the parameters are set suc
   \item \texttt{PARAM\_NGRAM\_USE\_TOP\_K = 10000}
 \end{itemize}
 
-We also implemented a subclass from the n-grams extractors to have the lemma instead of the tokens. We thought that it would give us better results since lemma refer to a general form of a word (ex: \emph{be} instead of \emph{are}, \emph{was}, \emph{is}, ect...) but in \emph{a posteriori} analyses, we don't see any improvements in our results. At the result of, we'll only consider tokens n-grams in our features.
+We also implemented a subclass from the n-grams extractors to have the lemma instead of the tokens. We thought that it would give us better results since lemma refer to a general form of a word (ex: \emph{be} instead of \emph{are}, \emph{was}, \emph{is}, ect...) but in \emph{a posteriori} analyses, we don't see any improvements in our results.
 
 The Tokens N-Grams feature will give us results for our \emph{Baseline Analysis}: more complex models and pipelines will systematically be compared to this ``simple" model.
 
 \subsubsection{Tokens and Sentences}
-We compute some statistics regarding sentences and sentences in a text:
+We compute some statistics regarding tokens and sentences in a text:
 \begin{itemize}
   \item Number of sentences and tokens in a text.
   \item Maximum size (in character) of a token and a sentence in a text.
@@ -289,7 +316,7 @@ and besides:
   \item The average size for a token is \textbf{4.0} characters.
 \end{itemize}  
 
-The features related to minimal sizes wouldn't give us much information about a text since a words like \emph{a} or \emph{I} are usually used. On the other hand, the maximal size, total number and average size related features might be very useful since they quantify somehow the interest of an author in a conversation/debate.
+The features related to minimal sizes wouldn't give us much information about a text since a words like \emph{a} or \emph{I} are often used. On the other hand, the maximal size, total number and average size related features might be very useful since they quantify somehow the interest of an author in a conversation/debate.
 
 \subsubsection{Other Lexical Statistics}
 In the article \emph{Stance Classification of Ideological Debates}\cite{Hasan-Ng:IJCNLP:2013}, Hasan defines 3 simple features which help to perform stance classification:
@@ -362,8 +389,6 @@ Verb            & V            & to be, had       \\ \hline
 \caption{\label{11pos} The 11 POS we consider for the Ratio POS feature}
 \end{table}
 
-??TODO: Investigate why no all the black lines
-
 The DKPro functions allow to compute the ratios and thus create the features very easily as seen on \cref{fig:11poscode}.
 \
 \begin{figure}[H]
@@ -405,7 +430,7 @@ The \emph{syntax} is the study of how languages are constructed in a certain lan
 \textbf{Dependency Tree}
 \\
 \\
-In V {\'A}gel's works \cite{ágel2006dependency}, the dependency tree is a graph that maps the relations between the different grammar units in a sentence. The theory behind is long long and arduous and we leave to the reader the study of dependency trees. Nevertheless, we give in the following figure (\ref{fig:deptree}), a simple example of a dependency tree.
+In V {\'A}gel's works \cite{ágel2006dependency}, the dependency tree is a graph that maps the relations between the different grammar units in a sentence. The theory behind is long and arduous and we leave to the reader the study of dependency trees. Nevertheless, we give in the following figure (\ref{fig:deptree}), a simple example of a dependency tree.
 
 For the sentence \texttt{I shot an elephant in my pajamas}, we get the following tree:
 \
@@ -449,13 +474,12 @@ Where the dummy variable \emph{s} corresponds here to a sentence.
 \\
 \\
 \textbf{Average length of a tree}
-
+\\
+\\
 Here we simply calculate the tree depth average on all the sentences:
 \begin{equation*}
 \frac{1}{|s|} \; \displaystyle\sum_{s \in text} depth(s)
 \end{equation*}
-
-Bla bla ?
 
 \subsubsection{Dependency Rules}
 Similarly to the tokens n-grams and the POS n-grams, it's possible to define dependencies n-grams, simply called dependency rules \cite{TUD-CS-2014-0882}. As an example, some of the dependency rules from the previous tree (\cref{fig:deptree}) are : VP $\rightarrow$ NP, NP $\rightarrow$ PP $\rightarrow$ NP, ect...
@@ -479,9 +503,6 @@ We can distinguish 5 kind of subordinate clauses:
   \item \texttt{Clause SINV} - Inverted declarative sentence, i.e. one in which the subject follows the tensed verb or modal. 
   \item \texttt{Clause SQ} - Inverted yes/no question, or main clause of a wh-question, following the wh-phrase in SBARQ.
 \end{itemize} 
-\
-??TRY to find some examples....
-
 To evaluate the importance of those clauses in the text, we built a feature that calculate the maximum number of clauses per sentence. This feature was also inspired by Stab work \cite{TUD-CS-2014-0882}.
 \
 \begin{figure}[H]
@@ -493,7 +514,7 @@ To evaluate the importance of those clauses in the text, we built a feature that
 \
 
 \subsection{Sentiment Analysis Feature}
-Sentiment Analysis, or Opinion Mining refer to NLP techniques of detecting subjective information out of textual data. The research work related to this work really exploded over the past decade, especially when social media emerged and the availability of high subjective and sentimental data. In this work, we use the standard state-of-the-art tool for researchers which is \emph{GPL Stanford Deep Learning for Sentiment Analysis}\footnote{http://nlp.stanford.edu/sentiment/code.html}. 
+Sentiment Analysis, or Opinion Mining refer to NLP techniques of detecting subjective information out of textual data. The research work related to the field really exploded over the past decade, especially when social media and its corollary, the availability of high subjective and sentimental data, emerged. In this work, we use the standard state-of-the-art tool for researchers which is \emph{GPL Stanford Deep Learning for Sentiment Analysis}\footnote{http://nlp.stanford.edu/sentiment/code.html}. 
 
 This tool assign to each sentence 5 percentage coefficients labelled \texttt{Very Negative}, \texttt{Negative}, \texttt{Neutral}, \texttt{Positive} and \texttt{Very Positive}. Those coefficients are calculated by recursive deep models that are detailed in Socher and Perelygin article \cite{Socher_recursivedeep}.
 
@@ -510,7 +531,7 @@ Stanford's Sentiment Analysis tool was not available in DKPro, and we had to par
 
 \subsubsection{Sentiment Coefficients}
 We call \emph{sentiment coefficients} the 5 output coefficients returned by Stanford's Sentiment Analysis tool. Again, those coefficients are calculated on the sentences and thus, we have to perform a statistical analysis on the sentences. 
-\\
+
 We denote the 5 sentiment coefficients with symbols as follows: \texttt{(-- - 0 + ++)} and $f_{c}$ is the function that given one sentiment c returns the corresponding coefficients in the sentence. Thus, we compute the minimum, the maximum, the average and the standard deviation of those 5 coefficients which gives us 20 metrics to evaluate the sentiment distribution in our text:
 \begin{equation*}
 \forall c \in \texttt{\{--, -, 0, +, ++\}}, \: \:
@@ -523,14 +544,44 @@ max_c = \underset{s \in text}{max} \: \: f_c(s) \\
 \end{equation*} 
 
 \subsubsection{Sentiment Fluctuation}
-The sentiments may vary slightly or significantly from a sentence to another. We can then define the \emph{sentiment rules} which model the transition from one state to another. Since we have 5 type of coefficients, it results in 25 rules (ex: -- \rightarrow +, 0 \rightarrow ++, - \rightarrow -). 
+The sentiments may vary slightly or significantly from a sentence to another. We can then define the \emph{sentiment rules} which model the transition from one state to another. Since we have 5 type of coefficients, it results in 25 rules (ex: -- $\rightarrow$ +, 0 $\rightarrow$ ++, - $\rightarrow$ -). 
 
-In comparison with token n-grams and dependency rules, 25-dimensional binary vectors are built and represent the absence and the presence of a rule.
+In comparison with token n-grams and dependency rules, 25-dimensional binary vectors are built and represent the absence and the presence of a rule. If we consider as input the two following sentences:
 
-??SHOW an example
+\texttt{It is a choice.} 
+
+\texttt{Independent choice is what makes American values so precious.}
+\\
+The corresponding sentiment fluctuation after using the sentiment analysis tool is: 0 $\rightarrow$ +
+\\
 
 \subsection{LDA}
-??BETTER title and explain
+The Latent Dirichlet Allocation is a generative model\footnote{A generative model is a model for randomly generating observable data, typically given some hidden parameters.} that allows sets of observations to be explained by unobserved groups that explain why some parts of the data are similar. Intuitively, it’s a way of automatically discovering topics that these sentences contain. 
+\\
+Suppose you have the following set of sentences:
+\\
+
+1) I like to eat mango and apples.
+
+2) I ate a mango and carrot smoothie for breakfast.
+
+3) Horses and cats are cute.
+
+4) My sister adopted a cat yesterday.
+
+5) Look at this cute hamster munching on a piece of carrot.
+\\
+\\
+Intuitively, The LDA will produce those rules:
+\begin{itemize}
+  \item Sentences 1 and 2: 100\% Topic $\alpha$
+  \item Sentences 3 and 4: 100\% Topic $\beta$
+  \item Sentence 5: 60\% Topic $\alpha$, 40\% Topic $\beta$
+  \item Topic $\alpha$: 30\% mango, 15\% apple, 10\% breakfast, 10\% munching... (food and eating)
+  \item Topic $\beta$: 20\% cat, 20\% horses, 20\% cute, 15\% hamster... (animals)
+\end{itemize} 
+
+LDA performs its discovery by representing documents as mixture of topics  that spit out words with certain probabilities. In this section, we introduce LDA in a intuitive way but please have a look at Blei, Jordan and Ng work\cite{Blei:2003:LDA:944919.944937} on it.
 
 \section{The Classifier and Performances}
 In Data Mining, once we have defined all the features that describe our data, we need to train a model on those features and evaluate the performances of the model. Even if the results can vary a lot from one classifier to another, in this study we're more interested in how perform the feature rather than how perform a certain classifier. Thus, we'll use a common state-of-the-art classifier called \emph{Support Vector Machine} or \emph{SVM}.
@@ -567,8 +618,7 @@ We shortly outline the different steps of the SVM algorithm:
 \end{itemize} 
 \\
 To specify in more details, here is how the optimal hyperplane and the margin are defined:
-
-\
+\\
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{fig/hypopt1.png}
@@ -576,7 +626,7 @@ To specify in more details, here is how the optimal hyperplane and the margin ar
     \caption[Short caption]{Margin and Hyperplane Optimization for SVM}
     \label{fig:hypopt}
 \end{figure}
-
+\\
 The geometric parameters \emph{b} and \emph{w} are found using \emph{Quadratic Programming}\footnote{Quadratic programming (QP) is a special type of mathematical optimization problem. It is the problem of optimizing (minimizing or maximizing) a quadratic function of several variables subject to linear constraints on these variables.} on this following function:
 \begin{equation*}
 min \; \frac{1}{2} ||w||^2 
@@ -584,3 +634,96 @@ min \; \frac{1}{2} ||w||^2
 \begin{equation*}
 s.t. y_i \; (w \; x_i + b) \geq 1, \forall x_i
 \end{equation*}
+If the data is linearly separable, the solver is supposed to find a unique minimum. Ideally SVM analysis should create an hyperplane that completely separates the classes into two non-overlapping groups. However, in practice, perfect separation may not be possible, or it may result in a model with so many cases that the model does not classify correctly. In this situation SVM finds the hyperplane that maximizes the margin and minimizes the misclassifications. Thus the slack variable is introduced: It correspond to the ratio of variables that are allowed to fall off the margin.
+
+\
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{fig/svm-slack.png}
+    \caption[Short caption]{Slack variable: In this example, two instances are misclassified}
+    \label{fig:svm-slack}
+\end{figure}
+
+SVM tries to maintain the slack variable as close to zero as possible while maximizing margin. However, it does not minimize the number of misclassifications (In computational complexity theory, NP-complete problem\footnote{NP-complete problems are in NP, the set of all decision problems whose solutions can be verified in polynomial time}) but the sum of distances from the margin hyperplanes. Besides, with the introduction of the new variables, the objective function and the constraints change:
+
+\
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{fig/svm-C.png}
+    \caption[Short caption]{New optimization problem}
+    \label{fig:svm-C}
+\end{figure}
+
+The simplest way to separate two groups of data is with a straight line (1 dimension), flat plane (2 dimensions) or an N-dimensional hyperplane. However, there are situations where a non-linear region can separate the groups more efficiently. SVM handles this by using a kernel function (non-linear) to map the data into a different space where a hyperplane (linear) cannot be used to do the separation. It means a non-linear function is learned by a linear learning machine in a high-dimensional feature space while the capacity of the system is controlled by a parameter that does not depend on the dimensionality of the space. This is called kernel trick which means the kernel function transform the data into a higher dimensional feature space to make it possible to perform the linear separation.  
+
+\
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{fig/svm-kernel.png}
+    \caption[Short caption]{Kernel Function: Non-linear separation}
+    \label{fig:svm-kernel}
+\end{figure}
+
+The two kernel functions used in practice are the following:
+\\
+\textbf{Polynomial Kernel}
+\begin{equation*}
+\forall x_i, x_j \: \: instances, \: \: k(x_i, x_j) = (x_i.x_j)^d, d \in \mathbb{N}
+\end{equation*}
+\\
+\textbf{Gaussian Kernel}
+\begin{equation*}
+\forall x_i, x_j \: \: instances, \: \: k(x_i, x_j) = exp(-\frac{||x_i - x_j||^2}{2 \sigma^2})
+\end{equation*}
+
+\subsection{Weka's SMO Classifier}
+The machine learning tools available on DKPro TC are based on \emph{Weka} components. The implementation we'll use for SVM is John C. Platt's \emph{Sequential Minimal Optimization} (SMO) algorithm\cite{Platt:1999}.  This implementation globally replaces all missing values and transforms nominal attributes into binary ones. It also normalizes all attributes by default. We'll use the polynomial kernel in our experiments since it was \emph{a posteriori} the most efficient one.
+
+\subsection{Evaluate the performances of our classification}
+To evaluate the performances of our classification, we should define a bunch of metrics that quantify the prediction capacities of our system (features + algorithm). We'll first see the different scenarios of prediction and then the measures we use to quantify the performances of our prediction. With the type of data we have, we can define 4 types of scenarios. If certain terms are unknown for you, please have a look at \cref{sec:bincla} on Binary Classification.
+\\
+
+\textbf{The In-Domain Cross-Validation}
+We perform a 10 folds cross-validation (\cref{sec:bincla}) for all the data in one of the six domains we previously defined. At the result of, for every experiment we run, we get 6 in-domain cross-validation. The reported results are the \emph{Accuracy} and teh \emph{Macro F-measure} as defined in \cref{sec:bincla}.
+\\
+For the domain homeschooling, we'll perform a \emph{leave-one-out} cross-validation\footnote{Leave-one-out cross-validation (LOOCV) is a particular case of n-fold cross-validation with n = number of instances. Since we have 29 text data for homeschooling, we perform a 29 folds cross-validation.}
+\\
+
+\textbf{The Full Cross-Validation}
+We perform a 10 folds cross-validation\ref{sec:bincla} for all the data in one of the six domains we previously defined. At the result of, for every experiment we run, we get 6 in-domain cross-validation.
+\\
+
+\textbf{The Cross-Domain Validation}
+For each domain, the data related to the domain is considered as a test set and the rest of the data (5 other domains) forms the test set. This evaluation scenario is somehow the most important since it reveals how \emph{general} are the features and how well they can predict the persuasiveness in general.
+\\
+
+\textbf{The Full Cross-Domain Validation}
+We aggregate the results of the 6 cross-domain validations such as follow:
+\\
+If $Dom$ is a domain in D = \{homeschooling, redshirting, prayer-in-schools, public-private-schools, mainstreaming, single-sex-education\} and $TP_{Dom}$, $TN_{Dom}$, $FP_{Dom}$ and $FN_{Dom}$ are the statistical measures for the performances of the binary classification (\cref{sec:bincla}), the confusion matrix of the Full Cross-Domain Validation scenario is defined as followed:
+\\
+\begin{table}[h]
+\center
+\begin{tabular}{|c|l|l|}
+\hline
+\multicolumn{1}{|l|}{} & \multicolumn{2}{l|}{Prediction} \\ \hline
+\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Actual\\ Value\end{tabular}} & $TP_{FCD}$ & $FP_{FCD}$ \\ \cline{2-3} 
+ & $FN_{FCD}$ & $TN_{FCD}$ \\ \hline
+\end{tabular}
+\end{table}
+\\
+With:
+\begin{equation*}
+TP_{FCD} = \sum\nolimits_{Dom \in D} TP_{Dom}
+\end{equation*}
+\begin{equation*}
+TN_{FCD} = \sum\nolimits_{Dom \in D} TN_{Dom}
+\end{equation*}
+\begin{equation*}
+FP_{FCD} = \sum\nolimits_{Dom \in D} FP_{Dom}
+\end{equation*}
+\begin{equation*}
+FN_{FCD} = \sum\nolimits_{Dom \in D} FN_{Dom}
+\end{equation*}
+
+The \emph{Accuracy} and the \emph{F-measure} for this scenario directly come from the previous measures.

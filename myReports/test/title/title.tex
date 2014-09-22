@@ -1,0 +1,62 @@
+\makeatletter
+
+\renewcommand\maketitle{
+  \begin{titlepage}
+  	\begin{center}
+    	\includegraphics[height=1cm]{title/images/logo_centrale.png}
+    	\hspace{\stretch{1}}
+    	\includegraphics[height=2cm]{title/images/logo_entreprise.png}
+    
+    \vspace{\stretch{0.5}}
+    	
+		  \begin{tabular*}{1.0\textwidth}{l @{\extracolsep{\fill}} r}
+					École Centrale de Lyon 				& \NomEntreprise 				\\
+					TFE \@date 							& (Ville du lieu du stage) 		\\
+			\end{tabular*}
+
+  	\vspace{\stretch{1.5}}
+  	
+ 		{\large \bf Rapport Final de Travail de Fin d'études \\}
+    \vspace{0.5cm}
+    {\LARGE \bf \@title\\}
+    \vspace{0.5cm}
+    {\large \it \@author\\}
+  
+	  \vspace{\stretch{2}}
+	  \includegraphics[width=1.0\textwidth]{title/images/logo_illustration.png}
+	  \vspace{\stretch{2}}
+	    
+		  \begin{tabular*}{1.0\textwidth}{|l @{\extracolsep{\fill}} r|}
+				\hline
+					Tuteurs : 						& \textit{Option} : (sigle développé)	\\
+					&\\
+					\textit{ECL} :				& 														\\
+					Prénom \textsc{Nom tuteur 1} 	& \textit{Filière} : (sigle développé)	\\
+					Prénom \textsc{Nom tuteur 2}\\
+					~ 	& 														\\
+					&\\
+					\textit{Entreprise} :	& 														\\		
+					Prénom \textsc{Nom tuteur 1}	& \textit{Métier} : (sigle développé)	\\
+					Prénom \textsc{Nom tuteur 2}\\
+					~	& 														\\	
+				\hline
+			\end{tabular*}
+		\end{center}\par
+    
+  \end{titlepage}
+  \setcounter{footnote}{0}
+  
+%  \global\let\thanks\relax
+%  \global\let\maketitle\relax
+%  \global\let\@thanks\@empty
+%  \global\let\@author\@empty
+%  \global\let\@date\@empty
+%  \global\let\@title\@empty
+%  \global\let\title\relax
+%  \global\let\author\relax
+%  \global\let\date\relax
+%  \global\let\and\relax
+}
+
+
+\makeatother

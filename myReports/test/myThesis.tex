@@ -2,65 +2,64 @@
 
 \usepackage[Sonny]{fncychap}
 \usepackage{fullpage}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{hyperref}
 \usepackage{algorithm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{cleveref}
 \usepackage{lipsum}
 \usepackage{amsmath}
+\usepackage{float}
+\usepackage{fancyhdr} 
 \usepackage{multirow}
+\usepackage{geometry}
 \usepackage{enumitem}
 \usepackage[table,xcdraw]{xcolor}
 \bibliographystyle{plain}
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
 \pagenumbering{roman}
+\usepackage{longtable}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{subfigure}
+\usepackage{url}
+\usepackage{eurosym}
+
+\definecolor{Gray}{rgb}{0.5,0.5,0.5}
 
 \usepackage[xindy]{glossaries}
+	
+\newcommand\MyBox[2]{
+  \fbox{\lower0.75cm
+    \vbox to 1.7cm{\vfil
+      \hbox to 1.7cm{\hfil\parbox{1.4cm}{#1\\#2}\hfil}
+      \vfil}%
+  }%
+}
  
 \makeglossaries
- 
-\newglossaryentry{latex}
-{
-    name=latex,
-    description={Is a mark up language specially suited 
-    for scientific documents}
-}
 
-\newglossaryentry{supervised learning}
-{
-	name=supervised learning,
-	description={Supervised learning is the machine learning task of inferring a function from labelled training data} 
-}
+\newcommand{\TitreRapport}{Identification of Argumentative Texts in User-Generated Content on Educational Controversies}
+\newcommand{\DateRapport}{2014}
+\newcommand{\AuteurRapport}{Anil \textsc{NARASSIGUIN}}
+\newcommand{\NomEntreprise}{Organisme} 
 
-\newglossaryentry{maths}
-{
-    name=mathematics,
-    description={Mathematics is what mathematicians do}
-}
+\input{tex/material/glossary.tex}
 
-\newglossaryentry{gold data}{
-    name=gold data,
-    description={Bla bla}
-}
-
-\newglossaryentry{token}{
-    name=token,
-    description={Tokenization is the process of breaking a stream of text up into words, phrases, symbols, or other meaningful elements called tokens.},
-    plural=tokens
-}
-
-\newglossaryentry{lemma}{
-    name=lemma,
-    description={In morphology and lexicography, a lemma (plural lemmas or lemmata) is the canonical form, dictionary form, or citation form of a set of words (headword)[citation needed]. In English, for example, run, runs, ran and running are forms of the same lexeme, with run as the lemma.},
-}
-
-\newglossaryentry{stemma}{
-    name=stemma,
-    description={?},
-}
+\input{style/style.tex}
 
 \begin{document}
-
+\input{tex/introduction/firstpage.tex}
+\newpage
+\input{tex/introduction/abstract-en.tex}
+\newpage
+\input{tex/introduction/abstract-fr.tex}
+\newpage
+\input{tex/acknowledgement/acknowledgement.tex}
 \newcounter{rom}
 
 %\input{tex/Title}\newpage\thispagestyle{plain}
@@ -70,13 +69,14 @@
 
 \tableofcontents
 
-\newpage\thispagestyle{plain}~
+%\newpage\thispagestyle{plain}~
 \clearpage
 \pagenumbering{arabic}
 
 \input{tex/introduction/Introduction.tex}\newpage\cleardoublepage
 \input{tex/body/background.tex}\newpage\cleardoublepage
 \input{tex/body/researchwork.tex}\newpage\cleardoublepage
+\input{tex/body/results.tex}\newpage\cleardoublepage
 %\input{tex/discussion}\newpage\cleardoublepage
 %\input{tex/conclusion}\newpage\cleardoublepage
 %\input{tex/acknowledgement}\newpage\cleardoublepage

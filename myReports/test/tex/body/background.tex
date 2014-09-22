@@ -1,6 +1,6 @@
-\chapter{Background}  %remove chapter or use "part"
-The aim of this work is to create a model that predicts if an article comment or a forum post can be classified as "persuasive" or "non-persuasive". We'll first give general definitions about persuasion and argumentation, and how the corpus was annotated. Then, the tool that was used to perform the classfication, DKPro Text Classification Framework, will be introduced and its functionnalities will be explained. Finally we'll discuss about the algorithm used and the metrics to evaluate our model.
-\section{Argumentation}  %% To be changed while writting it
+\chapter{Background} 
+The aim of this work is to create a model that predicts if an article comment or a forum post can be classified as \emph{persuasive} or \emph{non-persuasive}. We'll first give general definitions about persuasion and argumentation, and how the corpus was annotated. Then, the tool that was used to perform the classification, DKPro Text Classification Framework, will be introduced and its functionalities will be explained.
+\section{Argumentation} 
 \subsection{General Definitions}
 To better understand the vocabulary that will be used in this report, we give four important definitions:
 \\
@@ -12,10 +12,10 @@ To better understand the vocabulary that will be used in this report, we give fo
 proposals, interests, or expressed positions on issues, there is no debate. (\cite{freeley2000argumentation}, p. 43)
 \\
 \\
-\textbf{Argumentation} Reason giving in communicative situations by people whose purpose is the justification of acts, beliefs, attitudes, and values. (\cite{freeley2000argumentation}, p. 2)
+\textbf{\Gls{argumentation}} Reason giving in communicative situations by people whose purpose is the justification of acts, beliefs, attitudes, and values. (\cite{freeley2000argumentation}, p. 2)
 \\
 \\
-\textbf{Persuasion} Communication intended to influence the acts, beliefs, attitudes, and values of others. (\cite{freeley2000argumentation}, p. 2)
+\textbf{\Gls{persuasion}} Communication intended to influence the acts, beliefs, attitudes, and values of others. (\cite{freeley2000argumentation}, p. 2)
 
 \subsection{Persuasion}
 Persuasion and argumentation are the essence of any debate about controversies. Whether on-line or face-to-face, people try to convince others about their opinions, values, and attitude towards that particular controversy using various kinds of argumentation.
@@ -50,16 +50,16 @@ provides some examples (necessity of social interaction, total power of parents)
 feelings (sorry for home-schooled kids), so we can infer out the \emph{implicit} message. This example is
 thus also \emph{persuasive} and \emph{argumentative}.
 \subsection{Argumentation Mining}
-With the emergence of information technologies and especially social media, the availability of argumentative textual data is always bigger. People tend to express their point of view and their feelings in article comments, on forum posts, blogging platforms, ect... As most of the data available on line, they can be very messy and a lot of comments or posts are indeed off topic, forum spams\footnote{Forum spam consists of posts on Internet forums that contains related or unrelated advertisements, links to malicious websites, and abusive or otherwise unwanted information.} or \emph{trolls}\footnote{In Internet slang, a troll is a person who sows discord on the Internet by starting arguments or upsetting people, by posting inflammatory, extraneous, or off-topic messages in an online community (such as a newsgroup, forum, chat room, or blog) with the deliberate intent of provoking readers into an emotional response or of otherwise disrupting normal on-topic discussion.}. 
+With the emergence of information technologies and especially social media, the availability of argumentative textual data is always bigger. People tend to express their point of view and their feelings in article comments, on forum posts, blogging platforms, ect... As most of the data available online, they can be very messy and a lot of comments or posts are indeed off topic, forum spams\footnote{Forum spam consists of posts on Internet forums that contains related or unrelated advertisements, links to malicious websites, and abusive or otherwise unwanted information.} or \emph{trolls}\footnote{In Internet slang, a troll is a person who sows discord on the Internet by starting arguments or upsetting people, by posting inflammatory, extraneous, or off-topic messages in an online community (such as a newsgroup, forum, chat room, or blog) with the deliberate intent of provoking readers into an emotional response or of otherwise disrupting normal on-topic discussion.}. 
 \
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{fig/spam.png}
-    \caption[Short caption]{Example of the Viagra Spam in a forum}
+    \caption[Short caption]{Example a the viagra spam in a forum}
     \label{fig:forumspam}
 \end{figure}
 \
-Even so, it might be not trivial for some cases to judge if the author is completely off-topic or if he uses \emph{sarcasm} or \emph{irony} to support his opinion. One of the main step of \emph{Argumentation Mining}, as you can see on the dark grey rectangle of \cref{fig:argmining} is the detection of relevant documents, means the one that clearly show there argument but also the one which are persuasive but in an \emph{implicit} way.
+Even so, it might be not trivial for some cases to judge if the author is completely off-topic or if he uses \emph{\gls{sarcasm}} or \emph{\gls{irony}} to support his opinion. One of the main step of \emph{Argumentation Mining}, as you can see on the dark grey rectangle of \ref{fig:argmining} is the detection of relevant documents, means the one that clearly show their argument but also the one which are persuasive but in an \emph{implicit} way.
 \
 \begin{figure}[H]
     \centering
@@ -71,13 +71,26 @@ Even so, it might be not trivial for some cases to judge if the author is comple
 
 \section{NLP and the DKPro Framework}
 \subsection{Natural Language Processing}
-%% Find something to say with some references
+Natural Language Processing or \emph{NLP} is a multidisciplinary field that combines Linguistics, Computer Science, Artificial Intelligence and its modern approach, \Gls{machine learning}.
+
+NLP was actually the main goal of Computer Science's pioneers: write programs that would be able to understand human speech as it is written and spoken. This Fantasy which is becoming more and more true gives the actual definition of NLP:  ability of a computer program to understand humans natural language. 
+
+The development of NLP applications is challenging since computers and programming languages are highly structured contrary to human language which is not always precise. A lot of misunderstands come from ambiguities in intonation, context (a certain sentence can be serious or sarcastic in different contexts), the social background or the dialect used. Even so, a lot of progress have been made, and here is a non-exhaustive list of fields that emerged from NLP:
+\begin{itemize}
+  \item Sentence segmentation, part-of-speech tagging and parsing.  
+  \item Speech Recognition
+  \item Automated Translation
+  \item Automatic Summaries
+\end{itemize}
+
+In this work, we'll see how NLP can help us in Argumentation Mining and Persuasiveness detection. 
+ 
 \subsection{UIMA}
 DKPro stands for \emph{Darmstadt Knowledge Processing}
 \cite{GurevychEtal2007dkpro0} and it's a software suite for NLP based on the Apache UIMA Framework. UIMA are software systems that analyse large volumes of unstructured information in order to discover knowledge that is relevant to an end user. An example UIMA application might ingest plain text and identify entities, such as persons, places, organizations; or relations, such as works-for or located-at:
 
 \
-\begin{figure}[ht]
+\begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{fig/uima.png}
     \caption[Short caption]{UIMA: Order unstructured data, from UIMA website \cite{uima:Online}}
@@ -87,11 +100,8 @@ DKPro stands for \emph{Darmstadt Knowledge Processing}
 
 The real power of UIMA is its Analysis Engines (AE) which basically analyse a document and record descriptive attributes. Those descriptive attributes will form the document's metadata that will be used for further analysis (such as Text Classification in our case).
 
-GIVE EXAMPLES OF AE HERE AND DKPRO PROC PIPILINE AND CAS ?
-
-Thus, the DKPRo software use UIMA's AE in order to collect structured information about textual data. 
 \subsection{DKPro Core}
-Many NLP tools are already freely available in the NLP research community. DKPro Core \cite{TUD-CS-2014-0864} provides UIMA components wrapping these tools (and some original tools) so they can be used interchangeably in UIMA processing pipelines. The provided components wrap a constantly growing set of stand-of-the-art NLP tools and also include several original components written Java covering a wide range of tasks including: tokenization/segmentation, compound splitting, stemming, part-of-speech tagging, lemmatization, constituency parsing, dependency parsing, named entity recognition, coreference resolution, language identification, spelling correction, grammar checking, and support for reading and writing various file and corpus formats. 
+Many NLP tools are already freely available in the NLP research community. DKPro Core \cite{TUD-CS-2014-0864} provides UIMA components wrapping these tools so they can be used interchangeably in UIMA processing pipelines. The provided components wrap a constantly growing set of stand-of-the-art NLP tools and also include several original components written Java covering a wide range of tasks including: \gls{tokenization}/segmentation, compound splitting, stemming, \gls{parts-of-speech} tagging, lemmatization, constituency parsing, dependency parsing, named entity recognition, coreference resolution, language identification, spelling correction, grammar checking, and support for reading and writing various file and corpus formats. 
 \
 \begin{figure}[H]
     \centering
@@ -112,13 +122,13 @@ The aim of DKPro TC (commonly called TC) is to allow the user to apply machine l
 \begin{itemize}
   \item \Gls{supervised learning} Classification. The user should provide annotated textual data.
   \item Can work atomically on text (word, sentence, paragraph) or on pairs of documents.
-  \item Can perform single-label classification, multi-label classification and regression. DEFS
+  \item Can perform \gls{single-label} classification, \gls{multi-label} classification and \gls{regression}.
 \end{itemize}
 
 Concerning the algorithms used, TC relies on Weka\footnote{http://www.cs.waikato.ac.nz/ml/weka/} (\textit{Waikato Environment for Knowledge Analysis}). Developed by the Waikato University in New Zealand, Weka is an open-source Data Mining software written in Java, which makes available to its users not only Machine Learning algorithms but also processing features (attribute selections and transformations) and a user interface with visualization tools. Regularly updated, Weka is one of the main state-of-the-art data mining software used in research. 
 \
 
-Weka is integrated to TC thank to one major component: the \textbf{feature}. In the code, the feature is usually a class that computes a certain value (ex: length of a post, number of adjectives in a text, ect...) using the annotation provided by the DKPro pipeline. Features can be implemented by polymorphism from the mother-class \textit{FeatureExtractorResource$\_$ImplBase}. The results are then saved in an \textit{ARFF} \footnote{An ARFF (Attribute-Relation File Format) file is an ASCII text file that describes a list of instances sharing a set of attributes.} file, which corresponds to Weka's format files.  
+Weka communicates with TC thank to one major component: the \textbf{feature}. In the code, the feature is usually a class that computes a certain value (ex: length of a post, number of adjectives in a text, ect...) using the annotation provided by the DKPro pipeline. Features can be implemented by polymorphism from the mother-class \textit{FeatureExtractorResource$\_$ImplBase}. The results are then saved in an \textit{ARFF} \footnote{An ARFF (Attribute-Relation File Format) file is an ASCII text file that describes a list of instances sharing a set of attributes.} file, which corresponds to Weka's format files.  
 \
 \begin{figure}[H]
     \centering
@@ -130,21 +140,21 @@ Weka is integrated to TC thank to one major component: the \textbf{feature}. In 
 
 In a nutshell, TC adds 4 more steps to DKPro Core:
   \begin{itemize}
-  \item A step where the data are labelled, since we're doing supervised learning. In practice, the label information is extracted my a function of the reader ??WHERE do we define reader ?
+  \item A step where the data are labelled, since we're doing supervised learning. 
   \item Extraction of the features from the annotations.
-  \item Data Processing and Cross Validation ??DEF 
+  \item Data Processing and Cross Validation (\cref{sec:bincla})
   \item Report of the results (Accuracy, Macro F-Measure, ect...)
 \end{itemize}  
 
 The TC developers give regularly some helpful tutorials on their website\footnote{https://code.google.com/p/dkpro-tc/wiki/DemoExperiments}. 
 \
 \vspace{0.2cm}
-
-\textbf{License and usage}
 \\
+\textbf{License and usage}
+
 While most DKPro TC modules are available under the Apache Software License (ASL) version 2, there are a few modules that depend on external libraries and are thus licensed under the General Public Licence (GPL). 
 \\
-The SVN\footnote{Apache Subversion (often abbreviated SVN, after the command name svn) is a software versioning and revision control system distributed as free software under the Apache License.} commits of the different modules are available through Google code and the integration of new functionalities in a project is made possible by Maven (\cref{sec:maven}). It's also possible to use DKPro TC with Groovy which is an object-oriented programming language for the Java platform and destined to be run on a server. 
+The SVN\footnote{Apache Subversion (often abbreviated SVN, after the command name svn) is a software versioning and revision control system distributed as free software under the Apache License.} commits of the different modules are available through Google code and the integration of new functionalities in a project is made possible by Maven\footnote{Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.}. It's also possible to use DKPro TC with Groovy which is an object-oriented programming language for the Java platform and destined to be run on a server. 
 
 
 
