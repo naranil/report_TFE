@@ -53,4 +53,3 @@
 \contentsline {chapter}{\numberline {B}DKPro Core Overview}{41}{appendix.B}
 \contentsline {chapter}{\numberline {C}Xmi Files - Example}{42}{appendix.C}
 \contentsline {chapter}{\numberline {D}Binary Classification}{43}{appendix.D}
-\contentsline {chapter}{\numberline {E}Error Analysis - Confusion Matrices}{45}{appendix.E}
