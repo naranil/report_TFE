@@ -1,5 +1,5 @@
 \chapter{Results and Perspective}
-Once that the features used and the classification method (SVM algorithm) are defined, we run the pipeline on our \emph{gold data}. In this part we'll show the results returned by DKPro and we'll try to comment them. Then with the error analysis, we'll try to understand why our classification method has still some issues to recognize certain instances (a machine learning method would have some issue to understand \emph{irony} or \emph{sarcasm}). We'll also determine the features that contain high information thank to feature selection methods. Finally we'll have a look at extra tasks that should be done in the future.
+Once that the features used and the classification method (SVM algorithm) are defined, we run the pipeline on our \emph{gold data}. In this part we'll show the results returned by DKPro and we'll try to comment them. Then with the error analysis, we'll try to understand why our classification method has still some issues to recognize certain instances (a machine learning method would have some issues to understand \emph{irony} or \emph{sarcasm}). We'll also determine the features that contain high information thank to feature selection methods. Finally we'll have a look at extra tasks that should be done in the future.
 \section{Performance Evaluation}
 In this section, we display the macro F-measure for 11 different sets of features. Except if it's indicated, for every row, we consider the feature that is written in the cell in addition with the previous ones (for example for \emph{POS Ratio}, we consider \emph{POS Ratio} features and \emph{Baseline} features).
 \\
@@ -79,7 +79,7 @@ There is something seriously wrong with Homo Sapiens.
 \end{minipage}}
 \\
 
-Regarding the cross-domain scenarios, it seems that \emph{LDA} and dependencies rules are the two techniques which work the best and thus fit the best features which can detect persuasiveness among different domains. This is due to the fact that argumentation structures tend to be similar and thus dependency rules and the graphs of topics (for the LDA) tend to be the same.
+Regarding the cross-domain scenarios, it seems that \emph{LDA} and dependencies rules are the two techniques which work the best and thus give the best features which can detect persuasiveness among different domains. This is due to the fact that argumentation structures tend to be similar and thus dependency rules and the graphs of topics (for the LDA) tend to be the same.
 
 To better understand our actual results, we'll perform an analysis on the feature by selecting the ones which gather most of the information: it's \emph{Feature Selection}.  
 
@@ -153,7 +153,7 @@ Rank & Feature                                                                  
 \end{tabular}
 \end{table}
 
-Topic related features (ngrams and LDA) are here obviously dominant. Indeed, the available data mostly deal with school, education and religion. Even so, some general features (syntactic, lexical, sentiment) are also present. Regarding lexical features, the 2 first best are related to the length of a post (global length in characters and number of sentences). For sentiments, the one that count are the standard deviations.
+Topic related features (ngrams and LDA) are here obviously dominant. Indeed, the available data mostly deal with school, education and religion. Even so, some general features (syntactic, lexical, sentiment) are also present. Regarding lexical features, the 2 first best are related to the length of a post (global length in characters and number of sentences). For sentiments, the ones that count are the standard deviations.
 
 Now we remove all the features with an information gain equals to 0. There are 1738 remaining features, with the following distribution:
 \\
@@ -173,7 +173,7 @@ TOTAL                & 1738  \\ \hline
 \end{tabular}
 \end{table}
 
-The features that we engineered are quite pertinent since 70\% of the POS, 67\% of the lexical, 68\% of the sentiment and 80\% of the LDA features have an information gain strictly higher than 0. Even so, the baseline n-grams features still represent 85\% which means that 85\% of the information that tell us if a text is P1 or P2 is contained in simple topic-related features and uneasily interpretable features.
+The features that we engineered are quite pertinent since 70\% of the POS, 67\% of the lexical, 68\% of the sentiment and 80\% of the LDA features have an information gain strictly higher than 0. Even so, the baseline n-grams features still represent 85\% which means that 85\% of the information that tell us if a text is P1 or P2 is contained in simple topic-related and uneasily interpretable features.
 
 \section{Error Analysis}
 In the \cref{sec:conflictannotations}, we described how in the annotation process, some of the posts are declared as \emph{conflicting} since the annotators didn't unanimously agree on its class. In following example, for one of the annotator, the post is persuasive, the author implicitly supports homeschooling in the sentence \emph{many are willing to ignore several centuries of improvements in organized education in our part of the world}, but the two other annotators wrote that they were not able to conclude without any extra knowledge.
@@ -211,7 +211,7 @@ Misclassified & \cellcolor[HTML]{9B9B9B}FN & TN       \\ \hline
 \end{table}
 \\
 
-The FN cell, highlighted in gray, is the most problematic one. It corresponds to the cases where the annotators unanimously agreed on the class but the classifier couldn’t recognize it. To quantify how much the classifier can't recognize those instances we decided to compute the following coefficient:
+The FN cell, highlighted in gray, is the most problematic one. It corresponds to the cases where the annotators unanimously agreed on the class but the classifier couldn't recognize it. To quantify how much the classifier can't recognize those instances we decided to compute the following coefficient:
 \begin{equation*}
 \frac{TP + TN + FP}{TP + FN + FP + \textbf{FN}}
 \end{equation*}
@@ -242,7 +242,7 @@ To conclude this error analysis, we'll pick-up randomly 5 \emph{FN} cases out of
 \end{minipage}}
 \\
 \\
-It's hard to assign the label P1 to this post without deep knowledge. that said, the annotators considered it as P2. But here, the length of the sentences (quite long), the diversity of the vocabulary and a sentiment tone which stays more or less neutral, made the classifier to conclude P1 for the predicted class.
+It's hard to assign the label P1 to this post without deep knowledge. That said, the annotators considered it as P2. But here, the length of the sentences (quite long), the diversity of the vocabulary and a sentiment tone which stays more or less neutral, made the classifier to conclude P1 for the predicted class.
 \\
 \\
 \fbox{\begin{minipage}{1\textwidth}
@@ -270,7 +270,7 @@ Sam xx
 \end{minipage}}
 \\
 \\
-The author is asking for advice and clearly don't show any aim to persuade.  Nevertheless, the post is very long, so are the sentences and despite the grammar mistakes, there's a lot of topics vocabulary.
+The author is asking for advice and clearly don't show any aim to persuade.  Nevertheless, the post is very long, so are the sentences and despite the grammar mistakes, there's a lot of topic related vocabulary.
 \\
 \\
 \fbox{\begin{minipage}{1\textwidth}
@@ -294,11 +294,11 @@ Conflicts removed        & 75.24 & 65.22 & 80.17 & 82.66 & 61.36 & 68.42 & 77.71
 With conflict (reminder) & 68.18 & 51.48 & 74.13 & 73.21 & 74.00 & 65.52 & 70.59 \\ \hline
 \end{tabular}
 \end{table}
-Here are shown the accuracies. There's a significant increase for all the domains expect homeschooling and single sex education that can be explained by the low quantity of data available for those two domains.
+Here are shown the accuracies. There's a significant increase for all the domains except mainstreaming and single sex education that can be explained by the low quantity of data available for those two domains.
 \section{Future Work and General Conclusion}
 The different results we obtained lead us to think that other techniques can be applied to this classification problem. Obviously, more lexical and syntactic features should be implemented. For example, if I had more time, I could have integrated the Ruby-based Penn Discourse Tree Bank\cite{NLE:9163968} parser\footnote{http://wing.comp.nus.edu.sg/~linzihen/parser} in DKPro which would have given us discourse related feature sets. 
 
-Besides, in this study, meaningful features are highly topic-related and this because the domains distribution is not equal (476 texts for public private schools debate and only 29 for mainstreaming). If we want to gain in generality regarding our features, we should extend the quantity of domains. Moreover, 990 texts might be considered as low for a classification problem, but how is it possible to extend the dataset without launching another annotation phase which is time time-consuming? We came with the idea of \emph{bootstrapping} our training set by parsing some debate portal and consider all the posts as P1 (if the amount of data extracted is high enough, this approximation is acceptable since most of the posts of a debate portal should contain persuasiveness). We already have a content extractor written in Java using \emph{jsoup}\footnote{jsoup is a Java library for working with real-world HTML, http://jsoup.org/} that can extracts posts from the debate portal createdebate\footnote{http://www.createdebate.com/}. This portal has a \emph{Creative Commons License} so we can freely use its content. As of today, bootstrapping was not launched, but it should be possible to do it soon.
+Besides, in this study, meaningful features are highly topic-related and this because the domains distribution is not equal (476 texts for public private schools debate and only 29 for mainstreaming). If we want to gain in generality regarding our features, we should extend the quantity of domains. Moreover, 990 texts might be considered as low for a classification problem, but how is it possible to extend the dataset without launching another annotation phase which is time time-consuming? We came with the idea of \emph{bootstrapping} our training set by parsing some debate portal and consider all the posts as P1 (if the amount of data extracted is high enough, this approximation is acceptable since most of the posts of a debate portal should contain persuasiveness). We already have a content extractor written in Java using \emph{jsoup}\footnote{jsoup is a Java library for working with real-world HTML, http://jsoup.org/} that can extract posts from the debate portal createdebate\footnote{http://www.createdebate.com/}. This portal has a \emph{Creative Commons License} so we can freely use its content. As of today, bootstrapping was not launched, but it should be possible to do it soon.
 
 \section{Personal Conclusion}
 This internship in the field of NLP and text mining gave me an opportunity to understand the way research works. Working in this environment taught me how to organize myself (in terms of programming, research, ect...) and how to collaborate with others.

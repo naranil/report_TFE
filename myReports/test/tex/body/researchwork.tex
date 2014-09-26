@@ -179,7 +179,7 @@ The Macro F-measure (here called $F_1$) and the accuracy are high enough to cons
 
 \subsection{Corpus Statistics}
 Now that we have the \emph{gold labels} for the texts, we can sum the relevant information in a table: 
-\begin{table}[h]
+\begin{table}[H]
 \centering
 \begin{tabular}{ll|l|l|l|l|l|l|l|}
 \cline{3-9}
@@ -232,9 +232,9 @@ Now that we have all our data annotated, we have to extract relevant information
 The adjective lexical refers to the words and the vocabulary of a corpus. This part will deal with the extraction of meaningful features related to words, sentences, \glspl{token}\footnote{Tokenization is the process of breaking a stream of text up into words, phrases, symbols, or other meaningful elements called tokens.}, punctuations, ect...
 
 \subsubsection{Tokens N-Grams}
-In NLP, an n-gram is a contiguous sequence of n (with n integer) items from a given sequence of text or speech. As a result of, tokens n-grams are sequences of tokens from a text (\textit{Note: } For more information about units in linguistics such as words, tokens, \gls{lemma} and stemma, have a look at the glossary). The study of n-grams distribution in a corpus is an ancient technique \cite{tcjullmann77} in language processing and it's usage is common in the field.
+In NLP, an n-gram is a contiguous sequence of n items (with n integer) from a given sequence of text or speech. As a result of, tokens n-grams are sequences of tokens from a text (\textit{Note: } For more information about units in linguistics such as words, tokens, \gls{lemma} and stemma, have a look at the glossary). The study of n-grams distribution in a corpus is an ancient technique \cite{tcjullmann77} in language processing and its usage is common in the field.
 
-In this study, we use a DKPro available feature that extracts the 10.000 most common 1,2 and 3-grams in all the corpus and returns for each text a 10000-dimensional binary vector. Each vector element corresponds to one of the 10000 extracted n-gram, its value is 1 if the text contains the n-gram, 0 otherwise.
+In this study, we use a DKPro available feature that extracts the 10000 most common 1,2 and 3-grams in all the corpus and returns for each text a 10000-dimensional binary vector. Each vector element corresponds to one of the 10000 extracted n-gram, its value is 1 if the text contains the n-gram, 0 otherwise.
 \\
 To better understand this feature, let's take a simple example. We consider that the set of 1-grams contains 10 elements such as follow: 
 
@@ -424,7 +424,7 @@ and so on \ldots
 Unfortunately, the POS n-grams tend to introduce some noise and redundancy in our classification, so we won't use them much.
 
 \subsection{Syntactic features}
-The \emph{syntax} is the study of how languages are constructed in a certain language. We'll define in this part the syntax related. Syntax is very descriptive, most of the syntactic representations of sentences, texts are often graphs, tables, ect... We'll see how we came with the quantitative features needed to perform the classification.
+The \emph{syntax} is the study of how sentences are constructed in a certain language. We'll define in this part the syntax related features. Syntax is very descriptive, most of the syntactic representations of sentences are often graphs, tables, ect... We'll see how we came with the quantitative features needed to perform the classification.
 
 \subsubsection{Depth of the Dependency Tree}
 \textbf{Dependency Tree}
@@ -684,13 +684,13 @@ To evaluate the performances of our classification, we should define a bunch of 
 \\
 
 \textbf{The In-Domain Cross-Validation}
-We perform a 10 folds cross-validation (\cref{sec:bincla}) for all the data in one of the six domains we previously defined. At the result of, for every experiment we run, we get 6 in-domain cross-validation. The reported results are the \emph{Accuracy} and teh \emph{Macro F-measure} as defined in \cref{sec:bincla}.
+We perform a 10 folds cross-validation for all the data in one of the six domains we previously defined. At the result of, for every experiment we run, we get 6 in-domain cross-validation. The reported results are the \emph{Accuracy} and the \emph{Macro F-measure} as defined in \cref{sec:bincla}.
 \\
-For the domain homeschooling, we'll perform a \emph{leave-one-out} cross-validation\footnote{Leave-one-out cross-validation (LOOCV) is a particular case of n-fold cross-validation with n = number of instances. Since we have 29 text data for homeschooling, we perform a 29 folds cross-validation.}
+For the domain mainstreaming, we'll perform a \emph{leave-one-out cross-validation}\footnote{Leave-one-out cross-validation (LOOCV) is a particular case of n-fold cross-validation with n = number of instances. Since we have 29 text data for homeschooling, we perform a 29 folds cross-validation.}
 \\
 
 \textbf{The Full Cross-Validation}
-We perform a 10 folds cross-validation\ref{sec:bincla} for all the data in one of the six domains we previously defined. At the result of, for every experiment we run, we get 6 in-domain cross-validation.
+We perform a 10 folds cross-validation for all the data in one of the six domains we previously defined. At the result of, for every experiment we run, we get 6 in-domain cross-validation.
 \\
 
 \textbf{The Cross-Domain Validation}
@@ -700,7 +700,7 @@ For each domain, the data related to the domain is considered as a test set and 
 \textbf{The Full Cross-Domain Validation}
 We aggregate the results of the 6 cross-domain validations such as follow:
 \\
-If $Dom$ is a domain in D = \{homeschooling, redshirting, prayer-in-schools, public-private-schools, mainstreaming, single-sex-education\} and $TP_{Dom}$, $TN_{Dom}$, $FP_{Dom}$ and $FN_{Dom}$ are the statistical measures for the performances of the binary classification (\cref{sec:bincla}), the confusion matrix of the Full Cross-Domain Validation scenario is defined as followed:
+If $Dom$ is a domain in D = \{homeschooling, redshirting, prayer-in-schools, public-private-schools, mainstreaming, single-sex-education\} and $TP_{Dom}$, $TN_{Dom}$, $FP_{Dom}$ and $FN_{Dom}$ are the statistical measures for the performances of the binary classification, the confusion matrix of the Full Cross-Domain Validation scenario is defined as followed:
 \\
 \begin{table}[h]
 \center
